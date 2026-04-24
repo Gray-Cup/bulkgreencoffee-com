@@ -23,7 +23,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-neutral-200 bg-white">
+    <footer className="border-t border-neutral-200 bg-yellow-300">
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
         {/* Top links */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
@@ -32,7 +32,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-black hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-black hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         {/* Legal text (Apple-style) */}
-        <div className="mt-6 text-xs leading-relaxed text-muted-foreground space-y-2">
+        <div className="mt-6 text-xs leading-relaxed text-black space-y-2">
           <p>
             Gray Cup Enterprises Private Limited is a company incorporated in
             India under the Companies Act, 2013. Corporate Identification Number
@@ -100,7 +100,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-6 pt-6 border-t border-neutral-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-muted-foreground">
+        <div className="mt-6 pt-6 border-t border-black flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-black">
           <p>
             © {new Date().getFullYear()} Gray Cup Enterprises Pvt. Ltd. All
             rights reserved.
