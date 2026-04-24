@@ -9,7 +9,7 @@ export default function ContactPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl md:text-3xl font-semibold text-black mb-2">
-            Contact Gray Cup
+            Contact Bulk Green Coffee
           </h1>
           <p className="text-muted-foreground">
             Have a question or want to do business? There is always a way to

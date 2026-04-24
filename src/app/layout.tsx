@@ -44,9 +44,9 @@ const fontPublicSans = Public_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bulkgreencoffee.com"),
-  title: "B2B Gray Cup",
+  title: "Bulk Green Coffee",
   description:
-    "We sell indian tea, coffee and matcha to people who care about quality.",
+    "India's B2B source for specialty green coffee — Naturals, HSD, and Washed from Koraput, Odisha and Halflong, Assam.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -71,24 +71,24 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "B2B Gray Cup",
+    title: "Bulk Green Coffee",
     description:
-      "We sell indian tea, coffee and matcha to people who care about quality.",
+      "India's B2B source for specialty green coffee — Naturals, HSD, and Washed from Koraput, Odisha and Halflong, Assam.",
     images: [
       {
         url: "https://bulkgreencoffee.com/og.png",
         width: 1200,
         height: 630,
-        alt: "Gray Cup - Better customer experience with knowledgebase",
+        alt: "Bulk Green Coffee — Wholesale specialty green coffee from India",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "B2B Gray Cup",
+    title: "Bulk Green Coffee",
     description:
-      "We sell indian tea, coffee and matcha to people who care about quality.",
+      "India's B2B source for specialty green coffee — Naturals, HSD, and Washed from Koraput, Odisha and Halflong, Assam.",
     images: ["https://bulkgreencoffee.com/og.png"],
   },
 };

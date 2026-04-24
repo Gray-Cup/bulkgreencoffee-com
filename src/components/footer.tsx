@@ -71,7 +71,7 @@ export default function Footer() {
           </p>
 
           <p>
-            Gray Cup Enterprises Private Limited is engaged in the sourcing,
+            Gray Cup Enterprises Private Limited (trading as Bulk Green Coffee) is engaged in the sourcing,
             packaging, trading, and export of tea, coffee, and spices. Export of
             products is subject to applicable laws, customs regulations, and
             foreign trade policies. International shipments may be subject to

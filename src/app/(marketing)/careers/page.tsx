@@ -10,7 +10,7 @@ export default function CareersPage() {
       <div className="max-w-5xl mx-auto px-4 lg:px-6">
         <div className="text-start mb-16">
           <h1 className="text-3xl md:text-4xl font-semibold text-black mb-3">
-            Careers at Gray Cup
+            Careers at Bulk Green Coffee
           </h1>
           <p className="text-md md:text-lg text-muted-foreground">
             What are we? Who Started this? Started why?

@@ -18,16 +18,13 @@ export function Navbar() {
             <Link href="/" className="flex items-center gap-3">
               {/* <Image
                 src="/logo.svg"
-                alt="Gray Cup"
+                alt="Bulk Green Coffee"
                 width={45}
                 height={45}
                 draggable={false}
               /> */}
               <span className="text-xl font-semibold text-nowrap tracking-tight">
-                <span className="text-white bg-green-700 px-2 py-1 rounded-md text-xl">
-                  B2B
-                </span>{" "}
-                Gray Cup
+                Bulk Green Coffee
               </span>
             </Link>
             <p className="opacity-20">|</p>

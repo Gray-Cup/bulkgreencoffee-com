@@ -88,7 +88,7 @@ export function generateCountryFeed(
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
   <channel>
-    <title>Gray Cup B2B - ${config.name} (${config.currency})</title>
+    <title>Bulk Green Coffee - ${config.name} (${config.currency})</title>
     <link>${baseUrl}</link>
     <description>Premium wholesale tea and coffee products for ${config.name}</description>
 ${items}

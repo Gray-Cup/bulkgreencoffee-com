@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Our Sites | GrayCup",
+  title: "Our Sites | Bulk Green Coffee",
   description:
-    "Explore the informational websites owned and operated by GrayCup, focused on bulk chai, CTC tea education, and loose-leaf tea knowledge.",
+    "Explore the informational websites owned and operated by Bulk Green Coffee, focused on bulk chai, CTC tea education, and loose-leaf tea knowledge.",
 };
 
 export default function SitesPage() {
@@ -14,10 +14,10 @@ export default function SitesPage() {
       <header className="mb-12">
         <h1 className="text-4xl font-bold text-gray-900">Our Sites</h1>
         <p className="mt-4 max-w-3xl text-lg text-gray-600">
-          GrayCup operates a group of informational websites focused on
+          Bulk Green Coffee operates a group of informational websites focused on
           different aspects of tea — from bulk chai usage to CTC grading and
           loose-leaf tea education. All sites listed below are owned and
-          operated by GrayCup.
+          operated by Bulk Green Coffee.
         </p>
       </header>
 
@@ -104,7 +104,7 @@ export default function SitesPage() {
           Ownership & Transparency
         </h3>
         <p className="mt-3 text-gray-600">
-          All websites listed on this page are owned and operated by GrayCup.
+          All websites listed on this page are owned and operated by Bulk Green Coffee.
           Each platform serves a specific informational purpose while following
           the same standards of accuracy, clarity, and transparency.
         </p>

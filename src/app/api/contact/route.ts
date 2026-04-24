@@ -144,7 +144,7 @@ async function sendWebhook(
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "User-Agent": "Gray Cup-Contact-Form/1.0",
+        "User-Agent": "BulkGreenCoffee-Contact-Form/1.0",
       },
       body: JSON.stringify({
         type: "contact_form_submission",

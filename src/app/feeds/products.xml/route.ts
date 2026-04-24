@@ -83,7 +83,7 @@ function generateProductFeed(products: Product[], baseUrl: string): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
   <channel>
-    <title>Gray Cup B2B - Wholesale Tea and Coffee Products</title>
+    <title>Bulk Green Coffee - Wholesale Tea and Coffee Products</title>
     <link>${baseUrl}</link>
     <description>Premium wholesale tea and coffee products from India for businesses worldwide.</description>
     ${items.join("\n    ")}

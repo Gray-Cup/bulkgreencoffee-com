@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
 
       link_amount: 299,
       link_currency: "INR",
-      link_purpose: "Sample Request - GrayCup",
+      link_purpose: "Sample Request - Bulk Green Coffee",
 
       customer_details: {
         customer_name: customerName,

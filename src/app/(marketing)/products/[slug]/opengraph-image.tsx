@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getProductBySlug } from "@/data/products";
 
-export const alt = "Gray Cup B2B - Product";
+export const alt = "Bulk Green Coffee - Product";
 export const size = {
   width: 2400,
   height: 1260,
@@ -66,7 +66,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
               color: "#1a1a1a",
             }}
           >
-            Gray Cup B2B
+            Bulk Green Coffee
           </span>
         </div>
 

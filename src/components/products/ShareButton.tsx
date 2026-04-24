@@ -34,7 +34,7 @@ export function ShareButton({ productName }: ShareButtonProps) {
 
   const handleShareWhatsApp = () => {
     const url = getShareUrl();
-    const text = `Check out ${productName} on Gray Cup B2B: ${url}`;
+    const text = `Check out ${productName} on Bulk Green Coffee: ${url}`;
     window.open(
       `https://wa.me/?text=${encodeURIComponent(text)}`,
       "_blank",
@@ -44,7 +44,7 @@ export function ShareButton({ productName }: ShareButtonProps) {
 
   const handleShareEmail = () => {
     const url = getShareUrl();
-    const subject = `${productName} - Gray Cup B2B`;
+    const subject = `${productName} - Bulk Green Coffee`;
     const body = `I thought you might be interested in this product:\n\n${productName}\n${url}`;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
@@ -54,8 +54,8 @@ export function ShareButton({ productName }: ShareButtonProps) {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: `${productName} - Gray Cup B2B`,
-          text: `Check out ${productName} on Gray Cup B2B`,
+          title: `${productName} - Bulk Green Coffee`,
+          text: `Check out ${productName} on Bulk Green Coffee`,
           url: url,
         });
       } catch (err) {

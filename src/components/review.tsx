@@ -31,7 +31,7 @@ export const Review = () => (
           />
         </div>
         <p className="text-muted-foreground text-sm">
-          <span className="font-medium">Arjun Aditya</span>, Creator of Gray Cup
+          <span className="font-medium">Arjun Aditya</span>, Creator of Gray Cup / Bulk Green Coffee
         </p>
       </div>
       <a href="https://x.com/arjvnz" target="_blank" rel="noopener noreferrer">

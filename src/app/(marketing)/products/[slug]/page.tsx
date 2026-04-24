@@ -37,22 +37,22 @@ export async function generateMetadata({
   const baseUrl = "https://bulkgreencoffee.com";
   const productUrl = `${baseUrl}/products/${slug}`;
 
-  const seoDescription = `Buy ${product.name} in bulk from Gray Cup B2B. ${product.description} Price: ₹${product.priceRange.min}-₹${product.priceRange.max} ${product.priceRange.unit}. MOQ: ${product.minimumOrder.quantity} ${product.minimumOrder.unit}.`;
+  const seoDescription = `Buy ${product.name} in bulk from Bulk Green Coffee. ${product.description} Price: ₹${product.priceRange.min}-₹${product.priceRange.max} ${product.priceRange.unit}. MOQ: ${product.minimumOrder.quantity} ${product.minimumOrder.unit}.`;
 
   return {
-    title: `${product.name} | Wholesale ${product.category} Supplier India - Gray Cup B2B`,
+    title: `${product.name} | Wholesale ${product.category} Supplier India - Bulk Green Coffee`,
     description: seoDescription,
     openGraph: {
-      title: `${product.name} | Wholesale ${product.category} - Gray Cup B2B`,
+      title: `${product.name} | Wholesale ${product.category} - Bulk Green Coffee`,
       description: seoDescription,
       url: productUrl,
-      siteName: "Gray Cup B2B",
+      siteName: "Bulk Green Coffee",
       type: "website",
       locale: "en_IN",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${product.name} | Wholesale ${product.category} - Gray Cup B2B`,
+      title: `${product.name} | Wholesale ${product.category} - Bulk Green Coffee`,
       description: seoDescription,
     },
     alternates: {
