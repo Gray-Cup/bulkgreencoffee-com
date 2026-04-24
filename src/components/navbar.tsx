@@ -16,20 +16,11 @@ export function Navbar() {
           {/* LEFT */}
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-3">
-              {/* <Image
-                src="/logo.svg"
-                alt="Bulk Green Coffee"
-                width={45}
-                height={45}
-                draggable={false}
-              /> */}
               <span className="text-xl text-white font-semibold text-nowrap tracking-tight">
                 Bulk Green Coffee
               </span>
             </Link>
             <p className="opacity-20">|</p>
-
-            {/* Tablet-visible links */}
             <nav className="hidden md:flex text-neutral-100 gap-1 text-sm font-medium">
               {[
                 ["Products", "/products"],
@@ -47,7 +38,6 @@ export function Navbar() {
             </nav>
           </div>
 
-          {/* RIGHT */}
           <div className="flex items-center gap-2">
             <CurrencySelector />
             <a

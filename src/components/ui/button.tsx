@@ -16,6 +16,7 @@ const buttonVariants = cva(
         black:
           "bg-black text-white shadow-xs hover:bg-neutral-900 rounded-lg cursor-pointer",
         gray: "bg-primary grayshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
+        teal: "bg-teal-600 hover:bg-teal-500 text-white shadow-xs cursor-pointer rounded-lg",
         lightgray:
           "bg-primary lightgrayshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
         lightgraybg:
