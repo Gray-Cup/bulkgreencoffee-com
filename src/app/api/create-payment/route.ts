@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     const expiryTime = new Date();
     expiryTime.setMinutes(expiryTime.getMinutes() + 10);
 
-    const origin = request.headers.get("origin") || "https://b2b.graycup.in";
+    const origin = request.headers.get("origin") || "https://bulkgreencoffee.com";
 
     const paymentLinkPayload = {
       link_id: linkId,

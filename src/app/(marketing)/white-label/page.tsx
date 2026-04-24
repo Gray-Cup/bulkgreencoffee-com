@@ -80,7 +80,7 @@ export default function WhiteLabelPage() {
         {/* CTA */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <a
-            href="https://wa.me/918527914317?text=Hi%2C%20I%20found%20the%20White%20Label%20page%20on%20b2b.graycup.in%20and%20I%20would%20like%20to%20enquire%20about%20it."
+            href="https://wa.me/918527914317?text=Hi%2C%20I%20found%20the%20White%20Label%20page%20on%20bulkgreencoffee.com%20and%20I%20would%20like%20to%20enquire%20about%20it."
             target="_blank"
             rel="noopener noreferrer"
           >

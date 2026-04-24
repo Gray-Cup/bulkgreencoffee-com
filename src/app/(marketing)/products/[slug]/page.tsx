@@ -34,7 +34,7 @@ export async function generateMetadata({
     return { title: "Product Not Found" };
   }
 
-  const baseUrl = "https://b2b.graycup.in";
+  const baseUrl = "https://bulkgreencoffee.com";
   const productUrl = `${baseUrl}/products/${slug}`;
 
   const seoDescription = `Buy ${product.name} in bulk from Gray Cup B2B. ${product.description} Price: ₹${product.priceRange.min}-₹${product.priceRange.max} ${product.priceRange.unit}. MOQ: ${product.minimumOrder.quantity} ${product.minimumOrder.unit}.`;
@@ -70,9 +70,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   const breadcrumbs = [
-    { name: "Home", url: "https://b2b.graycup.in" },
-    { name: "Products", url: "https://b2b.graycup.in/products" },
-    { name: product.name, url: `https://b2b.graycup.in/products/${slug}` },
+    { name: "Home", url: "https://bulkgreencoffee.com" },
+    { name: "Products", url: "https://bulkgreencoffee.com/products" },
+    { name: product.name, url: `https://bulkgreencoffee.com/products/${slug}` },
   ];
 
   return (

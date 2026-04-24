@@ -4,6 +4,7 @@ import {
   ctcTeaProducts,
   looseLeafTeaProducts,
   instantCoffeeProducts,
+  specialtyCoffeeProducts,
 } from "@/data/products";
 import { CoffeeCup } from "@/components/svgs";
 import { LazyProductRow } from "@/components/products";
@@ -47,6 +48,10 @@ export default function Home() {
               {/* Featured Products Section */}
               <div className="py-20 bg-white">
                 <div className="max-w-6xl mx-auto px-4 lg:px-6">
+                  <LazyProductRow
+                    title="Koraput & Assam Specialty Coffee"
+                    products={specialtyCoffeeProducts}
+                  />
                   <LazyProductRow title="CTC Tea" products={ctcTeaProducts} />
                   <LazyProductRow
                     title="Coffee"

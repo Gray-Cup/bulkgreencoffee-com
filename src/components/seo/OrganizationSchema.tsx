@@ -2,13 +2,13 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://b2b.graycup.in/#organization",
+    "@id": "https://bulkgreencoffee.com/#organization",
     name: "Gray Cup Enterprises Private Limited",
     alternateName: "Gray Cup",
-    url: "https://b2b.graycup.in",
+    url: "https://bulkgreencoffee.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://b2b.graycup.in/logo.png",
+      url: "https://bulkgreencoffee.com/logo.png",
       width: 512,
       height: 512,
     },

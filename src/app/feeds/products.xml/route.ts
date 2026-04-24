@@ -92,7 +92,7 @@ function generateProductFeed(products: Product[], baseUrl: string): string {
 }
 
 export async function GET() {
-  const baseUrl = "https://b2b.graycup.in";
+  const baseUrl = "https://bulkgreencoffee.com";
 
   const xml = generateProductFeed(products, baseUrl);
 

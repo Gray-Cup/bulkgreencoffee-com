@@ -72,8 +72,8 @@ export default function AboutPage() {
           </p>
           <p>
             <span className="font-semibold">Online Store for Businesses</span>:{" "}
-            <a href="https://b2b.graycup.in/" className="link" target="_blank">
-              b2b.graycup.in
+            <a href="https://bulkgreencoffee.com/" className="link" target="_blank">
+              bulkgreencoffee.com
             </a>
             (Worldwide)
           </p>

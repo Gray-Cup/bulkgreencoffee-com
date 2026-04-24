@@ -43,7 +43,7 @@ const fontPublicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://b2b.graycup.in"),
+  metadataBase: new URL("https://bulkgreencoffee.com"),
   title: "B2B Gray Cup",
   description:
     "We sell indian tea, coffee and matcha to people who care about quality.",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
       "We sell indian tea, coffee and matcha to people who care about quality.",
     images: [
       {
-        url: "https://b2b.graycup.in/og.png",
+        url: "https://bulkgreencoffee.com/og.png",
         width: 1200,
         height: 630,
         alt: "Gray Cup - Better customer experience with knowledgebase",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     title: "B2B Gray Cup",
     description:
       "We sell indian tea, coffee and matcha to people who care about quality.",
-    images: ["https://b2b.graycup.in/og.png"],
+    images: ["https://bulkgreencoffee.com/og.png"],
   },
 };
 

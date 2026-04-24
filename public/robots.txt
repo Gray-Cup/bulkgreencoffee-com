@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://b2b.graycup.in
+Host: https://bulkgreencoffee.com
 
 # Sitemaps
-Sitemap: https://b2b.graycup.in/sitemap.xml
+Sitemap: https://bulkgreencoffee.com/sitemap.xml

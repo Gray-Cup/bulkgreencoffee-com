@@ -4,11 +4,13 @@ export { coffeeProducts } from "./coffee";
 export { ctcTeaProducts } from "./ctc-tea";
 export { looseLeafTeaProducts } from "./loose-leaf-tea";
 export { instantCoffeeProducts } from "./instant-coffee";
+export { specialtyCoffeeProducts } from "./specialty-coffee";
 
 import { coffeeProducts } from "./coffee";
 import { ctcTeaProducts } from "./ctc-tea";
 import { looseLeafTeaProducts } from "./loose-leaf-tea";
 import { instantCoffeeProducts } from "./instant-coffee";
+import { specialtyCoffeeProducts } from "./specialty-coffee";
 import type { Product } from "./types";
 
 // Combined array of all products
@@ -17,6 +19,7 @@ export const products: Product[] = [
   ...looseLeafTeaProducts,
   ...coffeeProducts,
   ...instantCoffeeProducts,
+  ...specialtyCoffeeProducts,
 ];
 
 // Helper functions
