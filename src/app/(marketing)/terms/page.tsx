@@ -19,7 +19,7 @@ export default function TermsOfService() {
           1. Introduction
         </h2>
         <p className="mb-4">
-          Welcome to Gray Cup. By using our website and services, you agree to
+          Welcome to Bulk Green Coffee. By using our website and services, you agree to
           comply with and be bound by the following terms and conditions. Please
           review them carefully.
         </p>
@@ -28,7 +28,7 @@ export default function TermsOfService() {
           2. Acceptance of Terms
         </h2>
         <p className="mb-4">
-          By accessing or using Gray Cup, you acknowledge that you have read,
+          By accessing or using Bulk Green Coffee, you acknowledge that you have read,
           understood, and agree to be bound by these Terms of Service. If you do
           not agree to these terms, please do not use our service.
         </p>
@@ -37,7 +37,7 @@ export default function TermsOfService() {
           3. Description of Service
         </h2>
         <p className="mb-4">
-          Gray Cup provides a platform for Zerodha users to track their stock
+          Bulk Green Coffee provides a platform for Zerodha users to track their stock
           holdings without repeated logins. Users can upload their holdings CSV
           file to view live price changes, portfolio value, and profit/loss
           information.
@@ -65,7 +65,7 @@ export default function TermsOfService() {
           6. Prohibited Uses
         </h2>
         <p className="mb-4">
-          You agree not to use Gray Cup for any unlawful purpose or in any way
+          You agree not to use Bulk Green Coffee for any unlawful purpose or in any way
           that could damage, disable, or impair our service. Prohibited
           activities include but are not limited to:
         </p>
@@ -80,7 +80,7 @@ export default function TermsOfService() {
           7. Limitation of Liability
         </h2>
         <p className="mb-4">
-          Gray Cup is provided &ldquo;as is&rdquo; without warranties of any
+          Bulk Green Coffee is provided &ldquo;as is&rdquo; without warranties of any
           kind. We are not responsible for any losses or damages resulting from
           your use of our service.
         </p>

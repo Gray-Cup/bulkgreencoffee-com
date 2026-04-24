@@ -8,7 +8,7 @@ export type Product = {
   longDescription?: string;
   details: string[];
   locations: string[];
-  category: "Tea" | "Coffee" | "Matcha";
+  category: "Coffee";
   categoryTwo?: "Single Origin" | "Blend" | "Premium";
   priceRange: {
     min: number;

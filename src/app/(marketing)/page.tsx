@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import {
   coffeeProducts,
-  ctcTeaProducts,
-  looseLeafTeaProducts,
   instantCoffeeProducts,
   specialtyCoffeeProducts,
 } from "@/data/products";
@@ -52,14 +50,9 @@ export default function Home() {
                     title="Koraput & Assam Specialty Coffee"
                     products={specialtyCoffeeProducts}
                   />
-                  <LazyProductRow title="CTC Tea" products={ctcTeaProducts} />
                   <LazyProductRow
                     title="Coffee"
                     products={[...coffeeProducts, ...instantCoffeeProducts]}
-                  />
-                  <LazyProductRow
-                    title="Loose Leaf Tea"
-                    products={looseLeafTeaProducts}
                   />
                 </div>
               </div>

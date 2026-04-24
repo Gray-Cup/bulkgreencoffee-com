@@ -11,10 +11,10 @@ export default function WhiteLabelPage() {
             White Label
           </p>
           <h1 className="text-3xl md:text-4xl font-semibold text-black mb-3">
-            Your Brand. Our Tea & Coffee.
+            Your Brand. Our Coffee.
           </h1>
           <p className="text-md text-muted-foreground max-w-xl">
-            We can be your sourcing partner — supplying premium quality tea and
+            We can be your sourcing partner — supplying premium quality green
             coffee under your brand name. Simple, reliable, and scalable.
           </p>
         </div>
@@ -30,7 +30,7 @@ export default function WhiteLabelPage() {
             <div className="p-5 border rounded-lg">
               <p className="font-medium text-black mb-1">Product Sourcing</p>
               <p className="text-sm text-muted-foreground">
-                We source and supply tea leaves, CTC, and coffee beans from
+                We source and supply specialty green coffee beans from
                 India — ready to carry your label.
               </p>
             </div>

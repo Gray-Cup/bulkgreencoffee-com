@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/products";
 
-type CategoryFilter = "All" | "Tea" | "Coffee";
+type CategoryFilter = "All" | "Coffee";
 
 export default function ProductsPage() {
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>("All");
@@ -16,7 +16,6 @@ export default function ProductsPage() {
 
   const categories: { value: CategoryFilter; label: string }[] = [
     { value: "All", label: "All Products" },
-    { value: "Tea", label: "Tea" },
     { value: "Coffee", label: "Coffee" },
   ];
 
@@ -29,7 +28,7 @@ export default function ProductsPage() {
               Our Products
             </h1>
             <p className="text-lg text-muted-foreground">
-              Premium quality tea and coffee selections
+              Premium quality specialty green coffee from India
             </p>
           </div>
 

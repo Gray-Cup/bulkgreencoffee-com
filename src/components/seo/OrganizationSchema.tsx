@@ -4,7 +4,7 @@ export function OrganizationSchema() {
     "@type": "Organization",
     "@id": "https://bulkgreencoffee.com/#organization",
     name: "Gray Cup Enterprises Private Limited",
-    alternateName: "Gray Cup",
+    alternateName: "Bulk Green Coffee",
     url: "https://bulkgreencoffee.com",
     logo: {
       "@type": "ImageObject",

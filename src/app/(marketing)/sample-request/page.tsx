@@ -8,11 +8,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Turnstile, useTurnstile } from "@/components/ui/turnstile";
 
 const productOptions = [
-  { id: "ctc-tea", label: "CTC Tea", color: "bg-green-600 border-green-600" },
   {
-    id: "loose-leaf-tea",
-    label: "Loose Leaf Tea",
-    color: "bg-green-500 border-green-500",
+    id: "specialty-coffee",
+    label: "Specialty Green Coffee",
+    color: "bg-green-700 border-green-700",
   },
   { id: "coffee", label: "Coffee", color: "bg-amber-900 border-amber-900" },
   {
