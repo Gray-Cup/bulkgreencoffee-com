@@ -11,7 +11,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="w-full border-b border-neutral-200 bg-white">
+      <header className="w-full bg-teal-800">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-6">
           {/* LEFT */}
           <div className="flex items-center gap-6">
@@ -23,25 +23,23 @@ export function Navbar() {
                 height={45}
                 draggable={false}
               /> */}
-              <span className="text-xl font-semibold text-nowrap tracking-tight">
+              <span className="text-xl text-white font-semibold text-nowrap tracking-tight">
                 Bulk Green Coffee
               </span>
             </Link>
             <p className="opacity-20">|</p>
 
             {/* Tablet-visible links */}
-            <nav className="hidden md:flex gap-1 text-sm font-medium">
+            <nav className="hidden md:flex text-neutral-100 gap-1 text-sm font-medium">
               {[
                 ["Products", "/products"],
-                ["Sample Request", "/sample-request"],
-                ["New Product Request", "/new-product-request"],
+                ["Product Request", "/new-product-request"],
                 ["White Label", "/white-label"],
-                ["Feedback", "/feedback"],
               ].map(([label, href]) => (
                 <Link
                   key={href}
                   href={href}
-                  className="rounded-md px-2 py-2 hover:bg-neutral-100"
+                  className="rounded-md px-2 py-2 hover:bg-teal-500"
                 >
                   {label}
                 </Link>
@@ -57,7 +55,7 @@ export function Navbar() {
               href="/contact"
               className="hidden lg:inline-block"
             >
-              <Button variant="gray" size="sm">
+              <Button variant="lightgraybg" size="sm">
                 Contact Methods
               </Button>
             </a>
@@ -68,14 +66,14 @@ export function Navbar() {
               rel="noopener"
               className="hidden lg:inline-block"
             >
-              <Button variant="blue" size="sm">
+              <Button variant="lightgraybg" size="sm">
                 Visit Consumer Store
               </Button>
             </a>
 
             {/* Hamburger — visible whenever anything is hidden */}
             <button
-              className="lg:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-neutral-100"
+              className="lg:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-teal-500"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >
@@ -118,7 +116,7 @@ export function Navbar() {
         `}
         >
           <button
-            className="mb-4 self-end rounded-md cursor-pointer p-2 hover:bg-neutral-100"
+            className="mb-4 self-end rounded-md cursor-pointer p-2 hover:bg-teal-500"
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
           >
@@ -126,19 +124,17 @@ export function Navbar() {
           </button>
 
           {/* All links */}
-          <nav className="flex flex-col gap-2 text-sm font-medium">
+          <nav className="flex flex-col text-neutral-100 gap-2 text-sm font-medium">
             {[
               ["Products", "/products"],
-              ["Sample Request", "/sample-request"],
-              ["New Product Request", "/new-product-request"],
+              ["Product Request", "/new-product-request"],
               ["White Label", "/white-label"],
-              ["Feedback", "/feedback"],
             ].map(([label, href]) => (
               <Link
                 key={href}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className="rounded-md px-2 py-2 hover:bg-neutral-100"
+                className="rounded-md px-2 py-2 hover:bg-teal-500"
               >
                 {label}
               </Link>

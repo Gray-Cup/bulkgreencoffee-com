@@ -21,11 +21,14 @@ export function PriceDisplay({ minPrice, maxPrice, unit }: PriceDisplayProps) {
   const maxConverted = convertPrice(maxPrice, currency);
   const decimals = currency === "INR" ? 0 : 2;
 
+  const priceText =
+    minPrice === maxPrice
+      ? `${config.symbol}${minConverted.toLocaleString(config.locale, { maximumFractionDigits: decimals })}`
+      : `${config.symbol}${minConverted.toLocaleString(config.locale, { maximumFractionDigits: decimals })} - ${config.symbol}${maxConverted.toLocaleString(config.locale, { maximumFractionDigits: decimals })}`;
+
   return (
     <>
-      {config.symbol}
-      {minConverted.toLocaleString(config.locale, { maximumFractionDigits: decimals })} - {config.symbol}
-      {maxConverted.toLocaleString(config.locale, { maximumFractionDigits: decimals })}{" "}
+      {priceText}{" "}
       <span className="text-sm font-normal text-muted-foreground">{unit}</span>
     </>
   );

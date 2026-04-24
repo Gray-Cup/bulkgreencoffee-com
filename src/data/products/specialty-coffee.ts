@@ -126,15 +126,15 @@ export const specialtyCoffeeProducts: Product[] = [
     category: "Coffee",
     categoryTwo: "Single Origin",
     priceRange: {
-      min: 1300,
-      max: 2400,
+      min: 1750,
+      max: 1750,
       unit: "per kg",
     },
     minimumOrder: {
       quantity: 30,
       unit: "kg",
     },
-    grades: ["AA", "A", "PB (Peaberry)"],
+    grades: ["Naturals"],
     packaging: ["60kg GrainPro jute bags", "30kg bags", "Bulk containers"],
     sku: "BGC-HLG-ARB-001",
     brand: "Bulk Green Coffee",

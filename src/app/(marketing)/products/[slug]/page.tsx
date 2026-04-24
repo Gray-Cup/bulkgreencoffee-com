@@ -3,7 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getProductBySlug, getAllProductSlugs } from "@/data/products";
-import { ProductConfigurator, PriceDisplay } from "@/components/products";
+import {
+  ProductConfigurator,
+  PriceDisplay,
+  MultiCurrencyPrice,
+} from "@/components/products";
 import { Badge } from "@/components/ui/badge";
 import {
   Accordion,
@@ -130,26 +134,37 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
 
               {/* Product Specs - Quick Info */}
-              <div className="grid grid-cols-2 gap-4 py-4 border-y border-gray-200">
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">
-                    Price Range
-                  </p>
-                  <p className="font-semibold">
-                    <PriceDisplay
-                      minPrice={product.priceRange.min}
-                      maxPrice={product.priceRange.max}
-                      unit={product.priceRange.unit}
-                    />
-                  </p>
+              <div className="py-4 border-y border-gray-200 space-y-3">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      {product.priceRange.min === product.priceRange.max
+                        ? "Price"
+                        : "Price Range"}
+                    </p>
+                    <p className="font-semibold">
+                      <PriceDisplay
+                        minPrice={product.priceRange.min}
+                        maxPrice={product.priceRange.max}
+                        unit={product.priceRange.unit}
+                      />
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      Minimum Order
+                    </p>
+                    <p className="font-semibold">
+                      {product.minimumOrder.quantity}{" "}
+                      {product.minimumOrder.unit}
+                    </p>
+                  </div>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">
-                    Minimum Order
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Reference prices {product.priceRange.unit}
                   </p>
-                  <p className="font-semibold">
-                    {product.minimumOrder.quantity} {product.minimumOrder.unit}
-                  </p>
+                  <MultiCurrencyPrice priceInINR={product.priceRange.min} />
                 </div>
               </div>
 

@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Product } from "@/data/products";
 import { useCurrency } from "@/components/currency-provider";
 import { convertPrice, formatPrice, CURRENCIES } from "@/lib/currency";
+import { CurrencySelector } from "@/components/currency-selector";
 
 type PriceCalculatorProps = {
   product: Product;
@@ -82,21 +83,23 @@ export function PriceCalculator({
     <Card className="border border-gray-200">
       <CardContent className="space-y-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <Label htmlFor="grade">Select Grade</Label>
-            <select
-              id="grade"
-              value={selectedGrade}
-              onChange={(e) => setSelectedGrade(e.target.value)}
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            >
-              {product.grades.map((grade) => (
-                <option key={grade} value={grade}>
-                  {grade}
-                </option>
-              ))}
-            </select>
-          </div>
+          {product.grades.length > 1 && (
+            <div className="space-y-2">
+              <Label htmlFor="grade">Select Grade</Label>
+              <select
+                id="grade"
+                value={selectedGrade}
+                onChange={(e) => setSelectedGrade(e.target.value)}
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                {product.grades.map((grade) => (
+                  <option key={grade} value={grade}>
+                    {grade}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
           <div className="space-y-2">
             <Label htmlFor="quantity">
@@ -133,8 +136,11 @@ export function PriceCalculator({
               {quantity} {product.minimumOrder.unit}
             </span>
           </div>
-          <div className="flex justify-between text-lg font-semibold border-t pt-3">
-            <span>Estimated Total:</span>
+          <div className="flex justify-between items-center text-lg font-semibold border-t pt-3">
+            <div className="flex items-center gap-2">
+              <span>Estimated Total</span>
+              <CurrencySelector />
+            </div>
             <span className="text-green-600">
               {currencyConfig.symbol}
               {convertPrice(estimatedPrice, currency).toLocaleString(currencyConfig.locale, {
