@@ -4,7 +4,7 @@ export const specialtyCoffeeProducts: Product[] = [
   {
     slug: "koraput-naturals",
     name: "Koraput Naturals",
-    image: "/products/koraput-naturals.png",
+    image: "/products/specific/assam.jpg",
     description:
       "Sun-dried natural process green coffee beans from the tribal highlands of Koraput, Odisha — bold, fruity, and traceable to small-holder farms.",
     longDescription:
@@ -42,7 +42,7 @@ export const specialtyCoffeeProducts: Product[] = [
   {
     slug: "koraput-hsd",
     name: "Koraput HSD",
-    image: "/products/koraput-hsd.png",
+    image: "/products/specific/hsd.jpg",
     description:
       "Honey Sun-Dried (HSD) green coffee from Koraput, Odisha — a unique process that delivers sweetness and body between naturals and washed.",
     longDescription:
@@ -80,7 +80,7 @@ export const specialtyCoffeeProducts: Product[] = [
   {
     slug: "koraput-washed",
     name: "Koraput Washed",
-    image: "/products/koraput-washed.png",
+    image: "/products/specific/washed.jpg",
     description:
       "Fully washed green coffee beans from Koraput, Odisha — clean, bright, and expressive of the Eastern Ghats terroir.",
     longDescription:
