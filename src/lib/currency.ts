@@ -99,7 +99,7 @@ export const COUNTRY_CURRENCY_MAP: Record<string, CurrencyCode> = {
   IN: "INR",
 };
 
-export const DEFAULT_CURRENCY: CurrencyCode = "INR";
+export const DEFAULT_CURRENCY: CurrencyCode = "USD";
 
 export function convertPrice(
   priceInINR: number,

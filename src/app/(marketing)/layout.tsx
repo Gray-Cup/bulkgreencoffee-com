@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
-import { CountryBanner } from "@/components/country-banner";
 
 export default function MarketingLayout({
   children,
@@ -12,7 +11,6 @@ export default function MarketingLayout({
     <div className="relative flex min-h-screen flex-col">
       {/* Sticky Header Group */}
       <div className="sticky top-0 z-50">
-        <CountryBanner />
         <Navbar />
       </div>
 
