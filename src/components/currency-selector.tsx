@@ -20,14 +20,14 @@ const CURRENCY_OPTIONS: { code: CurrencyCode; label: string; flag: string }[] = 
 ];
 
 export function CurrencySelector() {
-  const { currency, setCurrency, isLoading } = useCurrency();
+  const { currency, setCurrency } = useCurrency();
   const currentOption = CURRENCY_OPTIONS.find((o) => o.code === currency);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="lightgraybg" size="sm" disabled={isLoading} className="focus-visible:ring-0 focus-visible:outline-none data-[state=open]:ring-0">
-          {isLoading ? "..." : <>{currentOption?.flag} {currentOption?.label ?? "Currency"}</>}
+        <Button variant="lightgraybg" size="sm" className="focus-visible:ring-0 focus-visible:outline-none data-[state=open]:ring-0 min-w-[90px]">
+          {currentOption?.flag} {currentOption?.label ?? "USD ($)"}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
