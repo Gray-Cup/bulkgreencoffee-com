@@ -30,6 +30,7 @@ type CurrencyContextType = {
 const CurrencyContext = createContext<CurrencyContextType | undefined>(undefined);
 
 const CURRENCY_STORAGE_KEY = "graycup_currency";
+const CURRENCY_MANUAL_KEY = "graycup_currency_manual";
 
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   const [currency, setCurrencyState] = useState<CurrencyCode>(DEFAULT_CURRENCY);
@@ -38,11 +39,13 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     async function init() {
-      // Step 1: Resolve currency immediately (localStorage or geo) — unblocks the UI
+      // If the user manually picked a currency, respect it — skip geo
+      const isManual = localStorage.getItem(CURRENCY_MANUAL_KEY) === "true";
       const stored = localStorage.getItem(CURRENCY_STORAGE_KEY);
-      if (stored && stored in CURRENCIES) {
+      if (isManual && stored && stored in CURRENCIES) {
         setCurrencyState(stored as CurrencyCode);
       } else {
+        // Always re-check geo so VPN / location changes are picked up
         try {
           const response = await fetch("/api/geo");
           if (response.ok) {
@@ -54,12 +57,15 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
             }
           }
         } catch {
-          // fallback to DEFAULT_CURRENCY
+          // fall back to whatever was stored, or DEFAULT_CURRENCY
+          if (stored && stored in CURRENCIES) {
+            setCurrencyState(stored as CurrencyCode);
+          }
         }
       }
       setIsLoading(false);
 
-      // Step 2: Fetch live rates in the background (doesn't block the selector)
+      // Fetch live rates in the background — doesn't block the selector
       try {
         const ratesData = await fetch("/api/exchange-rates").then((r) => r.json() as Promise<RatesMap>);
         if (ratesData) setRates(ratesData);
@@ -74,6 +80,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   const setCurrency = (newCurrency: CurrencyCode) => {
     setCurrencyState(newCurrency);
     localStorage.setItem(CURRENCY_STORAGE_KEY, newCurrency);
+    localStorage.setItem(CURRENCY_MANUAL_KEY, "true");
   };
 
   const convert = useCallback(
