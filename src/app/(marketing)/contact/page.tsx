@@ -59,10 +59,10 @@ export default function ContactPage() {
               Response within 48 hours.
             </p>
             <a
-              href="mailto:bulk@graycup.org"
+              href="mailto:office@graycup.org"
               className="text-sm text-black underline underline-offset-4 hover:text-neutral-600"
             >
-              bulk@graycup.org
+              office@graycup.org
             </a>
           </div>
 
@@ -73,10 +73,10 @@ export default function ContactPage() {
               Response within 48 hours.
             </p>
             <a
-              href="mailto:arjun@graycup.org"
+              href="mailto:arjun@graycup.in"
               className="text-sm text-black underline underline-offset-4 hover:text-neutral-600"
             >
-              arjun@graycup.org
+              arjun@graycup.in
             </a>
           </div>
         </div>
