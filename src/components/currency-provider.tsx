@@ -38,35 +38,34 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     async function init() {
-      const [ratesResult] = await Promise.allSettled([
-        fetch("/api/exchange-rates").then((r) => r.json() as Promise<RatesMap>),
-        (async () => {
-          const stored = localStorage.getItem(CURRENCY_STORAGE_KEY);
-          if (stored && stored in CURRENCIES) {
-            setCurrencyState(stored as CurrencyCode);
-            return;
-          }
-          try {
-            const response = await fetch("/api/geo");
-            if (response.ok) {
-              const data = await response.json();
-              if (data.country) {
-                const detected = getCurrencyFromCountry(data.country);
-                setCurrencyState(detected);
-                localStorage.setItem(CURRENCY_STORAGE_KEY, detected);
-              }
+      // Step 1: Resolve currency immediately (localStorage or geo) — unblocks the UI
+      const stored = localStorage.getItem(CURRENCY_STORAGE_KEY);
+      if (stored && stored in CURRENCIES) {
+        setCurrencyState(stored as CurrencyCode);
+      } else {
+        try {
+          const response = await fetch("/api/geo");
+          if (response.ok) {
+            const data = await response.json();
+            if (data.country) {
+              const detected = getCurrencyFromCountry(data.country);
+              setCurrencyState(detected);
+              localStorage.setItem(CURRENCY_STORAGE_KEY, detected);
             }
-          } catch {
-            // fallback to default
           }
-        })(),
-      ]);
-
-      if (ratesResult.status === "fulfilled" && ratesResult.value) {
-        setRates(ratesResult.value);
+        } catch {
+          // fallback to DEFAULT_CURRENCY
+        }
       }
-
       setIsLoading(false);
+
+      // Step 2: Fetch live rates in the background (doesn't block the selector)
+      try {
+        const ratesData = await fetch("/api/exchange-rates").then((r) => r.json() as Promise<RatesMap>);
+        if (ratesData) setRates(ratesData);
+      } catch {
+        // keep using FALLBACK_RATES
+      }
     }
 
     init();
