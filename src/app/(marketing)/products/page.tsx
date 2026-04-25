@@ -116,7 +116,7 @@ export default function ProductsPage() {
               Our Products
             </h1>
             <p className="text-lg text-muted-foreground">
-              Premium specialty green coffee sourced directly from Indian farms
+              Premium green coffee sourced directly from Indian farms
             </p>
           </div>
 
