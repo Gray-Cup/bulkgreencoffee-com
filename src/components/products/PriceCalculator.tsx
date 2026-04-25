@@ -4,11 +4,10 @@ import { useState, useMemo, useEffect, type ReactNode } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import type { Product } from "@/data/products";
 import { useCurrency } from "@/components/currency-provider";
-import { convertPrice, formatPrice, CURRENCIES } from "@/lib/currency";
-import { CurrencySelector } from "@/components/currency-selector";
+import { CURRENCIES } from "@/lib/currency";
 
 type PriceCalculatorProps = {
   product: Product;
@@ -24,7 +23,7 @@ export function PriceCalculator({
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const { currency } = useCurrency();
+  const { currency, convert } = useCurrency();
   const currencyConfig = CURRENCIES[currency];
 
   // Initialize from URL params or defaults
@@ -127,7 +126,13 @@ export function PriceCalculator({
             <span className="text-muted-foreground">Unit Price:</span>
             <span className="font-medium">
               {currencyConfig.symbol}
-              {convertPrice(unitPrice, currency).toFixed(currency === "INR" ? 0 : 2)} {product.priceRange.unit}
+              {convert(unitPrice, currency).toFixed(currency === "INR" ? 0 : 2)}{" "}
+              {currency !== "USD" && (
+                <span className="font-normal text-muted-foreground">
+                  (${convert(unitPrice, "USD").toFixed(2)}){" "}
+                </span>
+              )}
+              {product.priceRange.unit}
             </span>
           </div>
           <div className="flex justify-between text-sm">
@@ -137,15 +142,17 @@ export function PriceCalculator({
             </span>
           </div>
           <div className="flex justify-between items-center text-lg font-semibold border-t pt-3">
-            <div className="flex items-center gap-2">
-              <span>Estimated Total</span>
-              <CurrencySelector />
-            </div>
+            <span>Estimated Total</span>
             <span className="text-green-600">
               {currencyConfig.symbol}
-              {convertPrice(estimatedPrice, currency).toLocaleString(currencyConfig.locale, {
+              {convert(estimatedPrice, currency).toLocaleString(currencyConfig.locale, {
                 maximumFractionDigits: currency === "INR" ? 0 : 2,
               })}
+              {currency !== "USD" && (
+                <span className="text-sm font-normal text-muted-foreground ml-1">
+                  (${convert(estimatedPrice, "USD").toFixed(2)})
+                </span>
+              )}
             </span>
           </div>
         </div>

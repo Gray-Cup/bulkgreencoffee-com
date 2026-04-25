@@ -101,8 +101,12 @@ export const COUNTRY_CURRENCY_MAP: Record<string, CurrencyCode> = {
 
 export const DEFAULT_CURRENCY: CurrencyCode = "INR";
 
-export function convertPrice(priceInINR: number, toCurrency: CurrencyCode): number {
-  const rate = CURRENCIES[toCurrency].rate;
+export function convertPrice(
+  priceInINR: number,
+  toCurrency: CurrencyCode,
+  rates?: Partial<Record<CurrencyCode, number>>
+): number {
+  const rate = rates?.[toCurrency] ?? CURRENCIES[toCurrency].rate;
   return Math.round(priceInINR * rate * 100) / 100;
 }
 

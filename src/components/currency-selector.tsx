@@ -1,6 +1,5 @@
 "use client";
 
-import { Globe } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useCurrency } from "@/components/currency-provider";
-import { CURRENCIES, type CurrencyCode } from "@/lib/currency";
+import { type CurrencyCode } from "@/lib/currency";
 import { Button } from "@/components/ui/button";
 
 const CURRENCY_OPTIONS: { code: CurrencyCode; label: string; flag: string }[] = [
@@ -17,17 +16,17 @@ const CURRENCY_OPTIONS: { code: CurrencyCode; label: string; flag: string }[] = 
   { code: "EUR", label: "EUR (€)", flag: "🇪🇺" },
   { code: "GBP", label: "GBP (£)", flag: "🇬🇧" },
   { code: "AED", label: "AED (د.إ)", flag: "🇦🇪" },
+  { code: "KRW", label: "KRW (₩)", flag: "🇰🇷" },
 ];
 
 export function CurrencySelector() {
   const { currency, setCurrency, isLoading } = useCurrency();
-  const currentCurrency = CURRENCIES[currency];
+  const currentOption = CURRENCY_OPTIONS.find((o) => o.code === currency);
 
   if (isLoading) {
     return (
-      <Button variant="teal" size="sm" disabled className="gap-2">
-        <Globe className="h-4 w-4" />
-        <span className="text-sm">...</span>
+      <Button variant="lightgraybg" size="sm" disabled>
+        Change currency
       </Button>
     );
   }
@@ -35,9 +34,8 @@ export function CurrencySelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-2">
-          <Globe className="h-4 w-4" />
-          <span className="text-sm">{currentCurrency.symbol}</span>
+        <Button variant="lightgraybg" size="sm" className="focus-visible:ring-0 focus-visible:outline-none data-[state=open]:ring-0">
+          {currentOption?.flag} Change currency
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

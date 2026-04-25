@@ -8,7 +8,6 @@ import { UserJotWidget } from "@/components/userjot-widget";
 import Script from "next/script";
 import IntercomChat from "@/components/IntercomChat";
 import { WhatsappWidget } from "@/components/whatsapp-widget";
-import { Floating } from "@/components/floating";
 import { OrganizationSchema } from "@/components/seo";
 
 const fontSans = Inter({
@@ -128,7 +127,7 @@ export default function RootLayout({
         <RootProviders>{children}</RootProviders>
         {/* <UserJotWidget /> */}
         <WhatsappWidget />
-        <Floating />
+        {/* <Floating /> */}
         {/* <IntercomChat /> */}
         {/* <Script id="crisp-chat" strategy="afterInteractive">
           {`

@@ -21,6 +21,21 @@ export type Product = {
   };
   grades: string[];
   packaging: string[];
+  varietal?: string;
+  scaScore?: number;
+  scale?: number; // tons available every 3 months (1–5)
+  origin?: {
+    state: string;
+    region: string;
+    variety: "Arabica" | "Robusta";
+    elevation: string;
+  };
+  estateImages?: string[];
+  reviews?: {
+    author: string;
+    role?: string;
+    text: string;
+  }[];
   // Google Merchant Center fields
   sku: string;
   brand: string;

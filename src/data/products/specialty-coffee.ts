@@ -23,7 +23,7 @@ export const specialtyCoffeeProducts: Product[] = [
     priceRange: {
       min: 1100,
       max: 1900,
-      unit: "per kg",
+      unit: "/kg",
     },
     minimumOrder: {
       quantity: 60,
@@ -31,6 +31,9 @@ export const specialtyCoffeeProducts: Product[] = [
     },
     grades: ["Grade 1", "Grade 2", "PB (Peaberry)"],
     packaging: ["60kg GrainPro jute bags", "30kg bags", "Bulk containers"],
+    varietal: "Chandragiri, Local Heirlooms",
+    scaScore: 87,
+    scale: 3,
     sku: "BGC-KOR-NAT-001",
     brand: "Bulk Green Coffee",
     availability: "in_stock",
@@ -58,7 +61,7 @@ export const specialtyCoffeeProducts: Product[] = [
     priceRange: {
       min: 1200,
       max: 2100,
-      unit: "per kg",
+      unit: "/kg",
     },
     minimumOrder: {
       quantity: 60,
@@ -66,6 +69,9 @@ export const specialtyCoffeeProducts: Product[] = [
     },
     grades: ["Gold Honey", "Red Honey", "Yellow Honey"],
     packaging: ["60kg GrainPro jute bags", "30kg bags", "Bulk containers"],
+    varietal: "Chandragiri, Local Heirlooms",
+    scaScore: 88,
+    scale: 2,
     sku: "BGC-KOR-HSD-001",
     brand: "Bulk Green Coffee",
     availability: "in_stock",
@@ -93,7 +99,7 @@ export const specialtyCoffeeProducts: Product[] = [
     priceRange: {
       min: 1100,
       max: 1900,
-      unit: "per kg",
+      unit: "/kg",
     },
     minimumOrder: {
       quantity: 60,
@@ -101,6 +107,9 @@ export const specialtyCoffeeProducts: Product[] = [
     },
     grades: ["AA", "A", "AB", "PB (Peaberry)"],
     packaging: ["60kg GrainPro jute bags", "30kg bags", "Bulk containers"],
+    varietal: "Chandragiri, S795",
+    scaScore: 87,
+    scale: 3,
     sku: "BGC-KOR-WSH-001",
     brand: "Bulk Green Coffee",
     availability: "in_stock",
@@ -109,7 +118,7 @@ export const specialtyCoffeeProducts: Product[] = [
   {
     slug: "halflong-arabica-naturals",
     name: "Halflong Arabica Naturals",
-    image: "/products/halflong-arabica-naturals.png",
+    image: "/products/specific/naturals.jpg",
     description:
       "Natural-process Arabica green coffee from the misty highlands of Halflong, Assam — rare, aromatic, and distinctly North-East Indian.",
     longDescription:
@@ -128,7 +137,7 @@ export const specialtyCoffeeProducts: Product[] = [
     priceRange: {
       min: 1750,
       max: 1750,
-      unit: "per kg",
+      unit: "/kg",
     },
     minimumOrder: {
       quantity: 30,
@@ -136,7 +145,123 @@ export const specialtyCoffeeProducts: Product[] = [
     },
     grades: ["Naturals"],
     packaging: ["60kg GrainPro jute bags", "30kg bags", "Bulk containers"],
+    varietal: "SL-9",
+    scaScore: 89,
+    scale: 1,
+    origin: {
+      state: "Assam",
+      region: "Halflong",
+      variety: "Arabica",
+      elevation: "950–960 masl",
+    },
+    estateImages: [
+      "/products/specific/assam.jpg",
+      "/products/specific/naturals.jpg",
+    ],
+    reviews: [
+      {
+        author: "Marcus Elliot",
+        role: "Head Roaster, Oslo Roasters",
+        text: "The SL-9 from Halflong is unlike anything else coming out of India right now. Delicate florals, clean finish — our customers can't get enough of it.",
+      },
+      {
+        author: "Priya Nair",
+        role: "Buyer, Blue Tokai Coffee",
+        text: "Exceptional traceability and consistent quality lot after lot. The natural process is handled beautifully — genuine wine notes without the ferment off-flavours.",
+      },
+      {
+        author: "Jan Kovář",
+        role: "Co-founder, Doubleshot Prague",
+        text: "We sourced two lots in 2024 and both scored above 88 at our cupping table. Highly recommended for any specialty roaster looking for a rare Indian origin.",
+      },
+    ],
     sku: "BGC-HLG-ARB-001",
+    brand: "Bulk Green Coffee",
+    availability: "in_stock",
+    googleProductCategory: "1868",
+  },
+  {
+    slug: "chirang-robusta-naturals",
+    name: "Chirang Robusta Naturals",
+    image: "/products/specific/assam.jpg",
+    description:
+      "Natural-process Robusta green coffee from the lowland forests of Chirang, Assam — bold, earthy, and distinctly North-East Indian.",
+    longDescription:
+      "Grown in the forest-fringe villages of Chirang district at 100–200m, this CxR (Congensis × Robusta) cultivar thrives in Assam's humid subtropical climate. Natural process drying on raised beds brings out a deep, chocolatey body with earthy undertones and low acidity — well-suited for espresso blends, instant coffee production, or buyers seeking affordable North-East Indian Robusta. Harvested by small-holder farming families under a canopy of deciduous forest.",
+    details: [
+      "CxR (Congensis × Robusta) cultivar",
+      "Natural sun-dried process",
+      "Low-altitude forest-fringe farms",
+      "Bold, chocolatey body",
+      "Low acidity, high caffeine",
+      "Ideal for espresso blends and instant",
+    ],
+    locations: ["Chirang, Assam"],
+    category: "Coffee",
+    categoryTwo: "Single Origin",
+    priceRange: {
+      min: 750,
+      max: 1100,
+      unit: "/kg",
+    },
+    minimumOrder: {
+      quantity: 60,
+      unit: "kg",
+    },
+    grades: ["Grade 1", "Grade 2"],
+    packaging: ["60kg GrainPro jute bags", "30kg bags", "Bulk containers"],
+    varietal: "CxR",
+    scale: 4,
+    origin: {
+      state: "Assam",
+      region: "Chirang",
+      variety: "Robusta",
+      elevation: "100–200 masl",
+    },
+    sku: "BGC-CHR-ROB-001",
+    brand: "Bulk Green Coffee",
+    availability: "in_stock",
+    googleProductCategory: "1868",
+  },
+  {
+    slug: "tirap-robusta-naturals",
+    name: "Tirap Robusta Naturals",
+    image: "/products/specific/assam.jpg",
+    description:
+      "Natural-process Robusta green coffee from the hilly forests of Tirap, Arunachal Pradesh — rich, full-bodied, and traceable to tribal farms.",
+    longDescription:
+      "Tirap district in Arunachal Pradesh sits at around 300m in the eastern foothills of the Himalayas, producing a CxR Robusta with more elevation character than typical lowland Robusta. The natural process lends a mild fruitiness on top of the variety's inherent earthiness and depth. Harvested by Naga and Wancho tribal communities, this coffee offers a compelling provenance story alongside solid commercial cup quality. Suitable for blending, instant, and high-volume roastery buyers.",
+    details: [
+      "CxR (Congensis × Robusta) cultivar",
+      "Natural sun-dried process",
+      "Himalayan foothill farms at 300m",
+      "Rich body with mild fruity notes",
+      "Tribal Naga and Wancho farming communities",
+      "Arunachal Pradesh single origin",
+    ],
+    locations: ["Tirap, Arunachal Pradesh"],
+    category: "Coffee",
+    categoryTwo: "Single Origin",
+    priceRange: {
+      min: 800,
+      max: 1200,
+      unit: "/kg",
+    },
+    minimumOrder: {
+      quantity: 60,
+      unit: "kg",
+    },
+    grades: ["Grade 1", "Grade 2"],
+    packaging: ["60kg GrainPro jute bags", "30kg bags", "Bulk containers"],
+    varietal: "CxR",
+    scale: 2,
+    origin: {
+      state: "Arunachal Pradesh",
+      region: "Tirap",
+      variety: "Robusta",
+      elevation: "300 masl",
+    },
+    sku: "BGC-TRP-ROB-001",
     brand: "Bulk Green Coffee",
     availability: "in_stock",
     googleProductCategory: "1868",

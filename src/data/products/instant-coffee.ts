@@ -22,7 +22,7 @@ export const instantCoffeeProducts: Product[] = [
     priceRange: {
       min: 1200,
       max: 1600,
-      unit: "per kg",
+      unit: "/kg",
     },
     minimumOrder: {
       quantity: 50,
@@ -56,7 +56,7 @@ export const instantCoffeeProducts: Product[] = [
     priceRange: {
       min: 1600,
       max: 2400,
-      unit: "per kg",
+      unit: "/kg",
     },
     minimumOrder: {
       quantity: 25,
@@ -90,7 +90,7 @@ export const instantCoffeeProducts: Product[] = [
     priceRange: {
       min: 1000,
       max: 1900,
-      unit: "per kg",
+      unit: "/kg",
     },
     minimumOrder: {
       quantity: 50,
