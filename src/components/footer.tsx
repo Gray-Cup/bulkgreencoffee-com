@@ -23,7 +23,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-neutral-200 bg-yellow-300">
+    <footer className="bg-yellow-300">
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
         {/* Top links */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">

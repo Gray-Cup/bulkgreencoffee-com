@@ -7,6 +7,7 @@ import Link from "next/link";
 export const revalidate = 3600;
 
 const eastIndiaProducts = getProductsByRegion("East India");
+const northEastIndiaProducts = getProductsByRegion("North East India");
 const southIndiaProducts = getProductsByRegion("South India");
 
 export default function Home() {
@@ -43,6 +44,10 @@ export default function Home() {
                   <LazyProductRow
                     title="East India"
                     products={eastIndiaProducts}
+                  />
+                  <LazyProductRow
+                    title="North East India"
+                    products={northEastIndiaProducts}
                   />
                   <LazyProductRow
                     title="South India"

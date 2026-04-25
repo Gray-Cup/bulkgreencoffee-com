@@ -15,7 +15,7 @@ export function getAllProductSlugs(): string[] {
   return products.map((product) => product.slug);
 }
 
-export function getProductsByRegion(region: "East India" | "South India"): Product[] {
+export function getProductsByRegion(region: "East India" | "North East India" | "South India"): Product[] {
   return products.filter((product) => product.region === region);
 }
 

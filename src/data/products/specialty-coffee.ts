@@ -5,6 +5,7 @@ export const specialtyCoffeeProducts: Product[] = [
 
   {
     slug: "koraput-naturals",
+    variety: "Arabica",
     name: "Koraput Naturals",
     image: "/products/specific/assam.jpg",
     description:
@@ -37,6 +38,7 @@ export const specialtyCoffeeProducts: Product[] = [
   },
   {
     slug: "koraput-hsd",
+    variety: "Arabica",
     name: "Koraput HSD",
     image: "/products/specific/hsd.jpg",
     description:
@@ -69,6 +71,7 @@ export const specialtyCoffeeProducts: Product[] = [
   },
   {
     slug: "koraput-washed",
+    variety: "Arabica",
     name: "Koraput Washed",
     image: "/products/specific/washed.jpg",
     description:
@@ -156,7 +159,7 @@ export const specialtyCoffeeProducts: Product[] = [
     locations: ["Halflong, Assam"],
     category: "Coffee",
     categoryTwo: "Single Origin",
-    region: "East India",
+    region: "North East India",
     priceRange: { min: 1750, max: 1750, unit: "/kg" },
     minimumOrder: { quantity: 30, unit: "kg" },
     grades: ["Naturals"],
@@ -215,7 +218,7 @@ export const specialtyCoffeeProducts: Product[] = [
     locations: ["Chirang, Assam"],
     category: "Coffee",
     categoryTwo: "Single Origin",
-    region: "East India",
+    region: "North East India",
     priceRange: { min: 750, max: 1100, unit: "/kg" },
     minimumOrder: { quantity: 60, unit: "kg" },
     grades: ["Grade 1", "Grade 2"],
@@ -252,7 +255,7 @@ export const specialtyCoffeeProducts: Product[] = [
     locations: ["Tirap, Arunachal Pradesh"],
     category: "Coffee",
     categoryTwo: "Single Origin",
-    region: "East India",
+    region: "North East India",
     priceRange: { min: 800, max: 1200, unit: "/kg" },
     minimumOrder: { quantity: 60, unit: "kg" },
     grades: ["Grade 1", "Grade 2"],
