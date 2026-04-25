@@ -6,3 +6,4 @@ export { ShareButton } from "./ShareButton";
 export { ProductConfigurator } from "./ProductConfigurator";
 export { PriceDisplay } from "./PriceDisplay";
 export { MultiCurrencyPrice } from "./MultiCurrencyPrice";
+export { ProductStickyHeader } from "./ProductStickyHeader";
