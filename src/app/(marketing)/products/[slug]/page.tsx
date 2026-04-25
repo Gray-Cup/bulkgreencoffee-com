@@ -6,7 +6,6 @@ import { getProductBySlug, getAllProductSlugs } from "@/data/products";
 import {
   ProductConfigurator,
   PriceDisplay,
-  ProductStickyHeader,
 } from "@/components/products";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -108,28 +107,40 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column - Image */}
-            <div>
-              <div className="aspect-square relative rounded-2xl overflow-hidden bg-gray-50 border border-gray-200 sticky top-28">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  draggable={false}
-                  className="object-contain"
-                  priority
-                />
+            {/* Left Column - Title + Image */}
+            <div className="flex flex-col gap-4 lg:gap-6">
+              {/* Title: above image on desktop, below image on mobile */}
+              <div className="order-2 lg:order-1">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <h1 className="text-3xl md:text-4xl font-semibold text-black">
+                    {product.name}
+                  </h1>
+                  {product.scaScore != null && product.scaScore > 81 && (
+                    <Badge className="bg-green-600 text-white text-xs px-2 py-0.5 rounded-full">
+                      Specialty
+                    </Badge>
+                  )}
+                </div>
+                <p className="text-gray-600">{product.description}</p>
+              </div>
+
+              {/* Image */}
+              <div className="order-1 lg:order-2">
+                <div className="aspect-square relative rounded-2xl overflow-hidden bg-gray-50 border border-gray-200 lg:sticky lg:top-28">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    draggable={false}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </div>
             </div>
 
             {/* Right Column */}
             <div className="space-y-6">
-              {/* Product Header */}
-              <ProductStickyHeader
-                name={product.name}
-                description={product.description}
-                scaScore={product.scaScore}
-              />
 
               {/* Product Specs */}
               <div className="py-4 border-y border-gray-200 space-y-3">
@@ -204,9 +215,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
               {/* Price Calculator */}
               <ProductConfigurator product={product} />
-
-              {/* Sentinel: header stops sticking when this enters the viewport */}
-              <div id="accordion-sentinel" />
 
               {/* Accordions */}
               <Accordion type="multiple" defaultValue={["description"]}>
