@@ -106,9 +106,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </ol>
           </nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Title + Image */}
-            <div className="flex flex-col gap-4 lg:gap-6">
+            <div className="flex flex-col gap-4 lg:gap-6 lg:sticky lg:top-28 lg:self-start">
               {/* Title: above image on desktop, below image on mobile */}
               <div className="order-2 lg:order-1">
                 <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -126,7 +126,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
               {/* Image */}
               <div className="order-1 lg:order-2">
-                <div className="aspect-square relative rounded-2xl overflow-hidden bg-gray-50 border border-gray-200 lg:sticky lg:top-28">
+                <div className="aspect-square relative rounded-2xl overflow-hidden bg-gray-50 border border-gray-200">
                   <Image
                     src={product.image}
                     alt={product.name}
