@@ -23,19 +23,11 @@ export function CurrencySelector() {
   const { currency, setCurrency, isLoading } = useCurrency();
   const currentOption = CURRENCY_OPTIONS.find((o) => o.code === currency);
 
-  if (isLoading) {
-    return (
-      <Button variant="lightgraybg" size="sm" disabled>
-        Change currency
-      </Button>
-    );
-  }
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="lightgraybg" size="sm" className="focus-visible:ring-0 focus-visible:outline-none data-[state=open]:ring-0">
-          {currentOption?.flag} Change currency
+        <Button variant="lightgraybg" size="sm" disabled={isLoading} className="focus-visible:ring-0 focus-visible:outline-none data-[state=open]:ring-0">
+          {isLoading ? "..." : <>{currentOption?.flag} {currentOption?.label ?? "Currency"}</>}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
