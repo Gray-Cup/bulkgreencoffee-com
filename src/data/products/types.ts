@@ -24,6 +24,7 @@ export type Product = {
   varietal?: string;
   scaScore?: number;
   scale?: number; // tons available every 3 months (1–5)
+  region?: "East India" | "South India";
   origin?: {
     state: string;
     region: string;

@@ -100,21 +100,27 @@ export function Navbar() {
 
         {/* Drawer */}
         <aside
-          className={`absolute right-0 top-0 h-full w-72 bg-white p-6 shadow-xl
+          style={{ backgroundColor: "#115e59" }}
+          className={`absolute right-0 top-0 h-full w-72 p-6 shadow-xl flex flex-col
           transform transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
           ${menuOpen ? "translate-x-0" : "translate-x-full"}
         `}
         >
-          <button
-            className="mb-4 self-end rounded-md cursor-pointer p-2 hover:bg-teal-500"
-            onClick={() => setMenuOpen(false)}
-            aria-label="Close menu"
-          >
-            ✕
-          </button>
+          <div className="flex items-center justify-between mb-6">
+            <span className="text-white font-semibold tracking-tight">
+              Bulk Green Coffee
+            </span>
+            <button
+              className="rounded-md cursor-pointer p-2 text-white hover:bg-teal-500"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              ✕
+            </button>
+          </div>
 
           {/* All links */}
-          <nav className="flex flex-col text-neutral-100 gap-2 text-sm font-medium">
+          <nav className="flex flex-col text-neutral-100 gap-1 text-sm font-medium">
             {[
               ["Products", "/products"],
               ["Product Request", "/new-product-request"],
@@ -134,12 +140,20 @@ export function Navbar() {
           {/* Actions */}
           <div className="mt-auto flex flex-col gap-2 pt-6">
             <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+            >
+              <Button variant="lightgraybg" size="sm" className="w-full">
+                Contact Methods
+              </Button>
+            </Link>
+            <Link
               href="https://graycup.in/"
               target="_blank"
               rel="noopener"
               onClick={() => setMenuOpen(false)}
             >
-              <Button variant="blue" size="sm" className="w-full">
+              <Button variant="lightgraybg" size="sm" className="w-full">
                 Visit Consumer Store
               </Button>
             </Link>

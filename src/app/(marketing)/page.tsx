@@ -1,15 +1,13 @@
 import { Button } from "@/components/ui/button";
-import {
-  coffeeProducts,
-  instantCoffeeProducts,
-  specialtyCoffeeProducts,
-} from "@/data/products";
-import { CoffeeCup } from "@/components/svgs";
+import { getProductsByRegion } from "@/data/products";
 import { LazyProductRow } from "@/components/products";
 import { RequestCallDialog } from "@/components/RequestCallDialog";
 import Link from "next/link";
 
 export const revalidate = 3600;
+
+const eastIndiaProducts = getProductsByRegion("East India");
+const southIndiaProducts = getProductsByRegion("South India");
 
 export default function Home() {
   return (
@@ -43,18 +41,17 @@ export default function Home() {
               <div className="py-20 bg-white">
                 <div className="max-w-6xl mx-auto px-4 lg:px-6">
                   <LazyProductRow
-                    title="Koraput & Assam Specialty Coffee"
-                    products={specialtyCoffeeProducts}
+                    title="East India"
+                    products={eastIndiaProducts}
                   />
                   <LazyProductRow
-                    title="Coffee"
-                    products={[...coffeeProducts, ...instantCoffeeProducts]}
+                    title="South India"
+                    products={southIndiaProducts}
                   />
                 </div>
               </div>
             </div>
           </div>
-
 
           {/* <Image src="/beans-circle.webp" alt="coffee beans" className="pl-2" width={200} height={200} /> */}
         </div>
