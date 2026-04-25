@@ -9,6 +9,7 @@ import Script from "next/script";
 import IntercomChat from "@/components/IntercomChat";
 import { WhatsappWidget } from "@/components/whatsapp-widget";
 import { OrganizationSchema } from "@/components/seo";
+import { Analytics } from "@vercel/analytics/next"
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -127,6 +128,7 @@ export default function RootLayout({
         <RootProviders>{children}</RootProviders>
         {/* <UserJotWidget /> */}
         <WhatsappWidget />
+        <Analytics />
         {/* <Floating /> */}
         {/* <IntercomChat /> */}
         {/* <Script id="crisp-chat" strategy="afterInteractive">
