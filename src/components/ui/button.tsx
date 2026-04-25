@@ -20,7 +20,7 @@ const buttonVariants = cva(
         lightgray:
           "bg-primary lightgrayshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
         lightgraybg:
-          "bg-neutral-100 active:bg-neutral-200 duration-300 border border-neutral-300 hover:border-neutral-400/60 text-neutral-950 shadow-xs cursor-pointer rounded-lg",
+          "bg-neutral-100 hover:bg-white active:bg-neutral-200 duration-300 border border-neutral-300 hover:border-neutral-400/60 text-neutral-950 shadow-xs cursor-pointer rounded-lg",
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground cursor-pointer",
         secondary: " text-black cursor-pointer",
@@ -30,7 +30,7 @@ const buttonVariants = cva(
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3 cursor-pointer",
         minor: "py-1 px-3 text-sm has-[>svg]:px-3 cursor-pointer",
-        sm: "max-sm:text-sm py-1.5 max-xs:px-3 max-w-lg:px-5 max-w-lg:py-2 px-5 text-md has-[>svg]:px-4 cursor-pointer",
+        sm: "max-sm:text-sm py-1.5 max-xs:px-3 max-w-lg:px-3.5 max-w-lg:py-2 px-3.5 text-md has-[>svg]:px-4 cursor-pointer",
         lg: "max-sm:text-sm py-2.5 max-xs:px-3 max-xs:py-2 max-sm:px-6 px-6 text-lg has-[>svg]:px-4",
         icon: "size-9",
       },

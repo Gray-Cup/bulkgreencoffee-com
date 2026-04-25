@@ -35,7 +35,7 @@ export function CurrencySelector() {
           <DropdownMenuItem
             key={option.code}
             onClick={() => setCurrency(option.code)}
-            className={currency === option.code ? "bg-accent" : ""}
+            className={currency === option.code ? "bg-accent" : "cursor-pointer"}
           >
             <span className="mr-2">{option.flag}</span>
             {option.label}

@@ -46,18 +46,18 @@ export function Navbar() {
               className="hidden lg:inline-block"
             >
               <Button variant="lightgraybg" size="sm">
-                Contact Methods
+                Contact
               </Button>
             </a>
             <a
               id="store-link"
-              href="https://graycup.in/"
+              href="https://graycup.org/"
               target="_blank"
               rel="noopener"
               className="hidden lg:inline-block"
             >
               <Button variant="lightgraybg" size="sm">
-                Visit Consumer Store
+                Visit Gray Cup
               </Button>
             </a>
 
@@ -144,17 +144,17 @@ export function Navbar() {
               onClick={() => setMenuOpen(false)}
             >
               <Button variant="lightgraybg" size="sm" className="w-full">
-                Contact Methods
+                Contact
               </Button>
             </Link>
             <Link
-              href="https://graycup.in/"
+              href="https://graycup.org/"
               target="_blank"
               rel="noopener"
               onClick={() => setMenuOpen(false)}
             >
               <Button variant="lightgraybg" size="sm" className="w-full">
-                Visit Consumer Store
+                Visit Gray Cup
               </Button>
             </Link>
           </div>
