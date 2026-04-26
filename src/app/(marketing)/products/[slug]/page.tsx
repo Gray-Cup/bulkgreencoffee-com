@@ -14,7 +14,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { ProductSchema, BreadcrumbSchema } from "@/components/seo";
+import { BreadcrumbSchema } from "@/components/seo";
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
@@ -80,7 +80,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <>
-      <ProductSchema product={product} />
       <BreadcrumbSchema items={breadcrumbs} />
 
       {/* Main product section — breadcrumb sticks within this container */}
