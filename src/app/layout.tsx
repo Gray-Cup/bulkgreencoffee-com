@@ -100,19 +100,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-white">
-      <meta name="p:domain_verify" content="263c83126f8d79bccabc00711d8d80c6" />
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-2X266LTV9Z"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-2X266LTV9Z');
-        `}
-      </Script>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -129,28 +116,6 @@ export default function RootLayout({
         {/* <UserJotWidget /> */}
         <WhatsappWidget />
         <Analytics />
-        {/* <Floating /> */}
-        {/* <IntercomChat /> */}
-        {/* <Script id="crisp-chat" strategy="afterInteractive">
-          {`
-            window.$crisp = [];
-            window.CRISP_WEBSITE_ID = "db496e2e-4326-4f7d-82ab-369ab666fb46";
-            (function () {
-              var d = document;
-              var s = d.createElement("script");
-              s.src = "https://client.crisp.chat/l.js";
-              s.async = 1;
-              d.getElementsByTagName("head")[0].appendChild(s);
-            })();
-          `}
-        </Script> */}
-        {/* <Script>
-          {`(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");
-    script.src="${(process.env.NEXT_PUBLIC_CHATBASE_HOST || "https://www.chatbase.co/") + "embed.min.js"}";
-    script.id="${process.env.NEXT_PUBLIC_CHATBOT_ID}";
-    script.domain="${process.env.NEXT_PUBLIC_CHATBASE_HOST || "www.chatbase.co"}";
-    document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();`}
-        </Script> */}
       </body>
     </html>
   );
