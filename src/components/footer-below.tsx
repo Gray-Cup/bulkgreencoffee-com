@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Footer() {
+export default function FooterBelow() {
   const mainLinks = [
     { href: "/about", label: "About" },
     { href: "/products", label: "Products" },
@@ -23,30 +23,28 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-yellow-300">
-      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
-        {/* Top links */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-            {mainLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-black hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+    <footer className="bg-teal-600">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 pb-8">
 
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-            {socialLinks.map((link) => (
+        {/* Bottom bar */}
+        <div className="pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-md text-white font-medium">
+          <p>
+            © {new Date().getFullYear()} Gray Cup Enterprises Pvt. Ltd. All
+            rights reserved.
+          </p>
+
+          <nav className="flex items-center gap-x-6 text-md">
+            {resourceLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-foreground transition-colors"
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={
+                  link.href.startsWith("http")
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+                className="hover:underline transition-colors"
               >
                 {link.label}
               </Link>
