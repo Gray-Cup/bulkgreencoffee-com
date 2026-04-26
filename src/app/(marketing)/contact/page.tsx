@@ -45,7 +45,7 @@ export default function ContactPage() {
               Call us directly.
             </p>
             <p className="text-sm text-black underline underline-offset-4 hover:text-neutral-600">
-              +91 98765 43210
+              +91 85279 14317
             </p>
             <p className="text-sm text-black underline underline-offset-4 hover:text-neutral-600 pt-4">
               +91 98765 43240

@@ -1,0 +1,185 @@
+<SYSTEM>This is the full textual snapshot of bulkgreencoffee.com</SYSTEM>
+
+# llms-full v1
+# site: https://bulkgreencoffee.com
+# generated: 2026-04-26T17:35:51.433Z
+# generator: custom script
+# pages: 24
+
+## Table of Contents
+- 1 https://bulkgreencoffee.com — Bulk Green Coffee - Home
+- 2 https://bulkgreencoffee.com/about — About Bulk Green Coffee
+- 3 https://bulkgreencoffee.com/products — Products - Green Coffee Catalog
+- 4 https://bulkgreencoffee.com/contact — Contact Bulk Green Coffee
+- 5 https://bulkgreencoffee.com/white-label — Bulk Green Coffee - White Label
+- 6 https://bulkgreencoffee.com/sample-request — Bulk Green Coffee - Sample Request
+- 7 https://bulkgreencoffee.com/sites — Bulk Green Coffee - Sites
+- 8 https://bulkgreencoffee.com/careers — Bulk Green Coffee - Careers
+- 9 https://bulkgreencoffee.com/team — Bulk Green Coffee - Team
+- 10 https://bulkgreencoffee.com/social-responsibility — Bulk Green Coffee - Social Responsibility
+- 11 https://bulkgreencoffee.com/terms — Terms of Service
+- 12 https://bulkgreencoffee.com/privacy — Privacy Policy
+- 13 https://bulkgreencoffee.com/new-product-request — New Product Request
+
+---
+
+## Pages
+### BEGIN PAGE
+title: Bulk Green Coffee - Home
+url: https://bulkgreencoffee.com
+description: We help Roasters and Distributors source better Indian Coffee. B2B green coffee supplier based in India.
+### END PAGE
+
+### BEGIN PAGE
+title: About Bulk Green Coffee
+url: https://bulkgreencoffee.com/about
+description: About Gray Cup Enterprises Private Limited - Legal details, notable people, and other sites including graycup.in and IndiaMart presence.
+### END PAGE
+
+### BEGIN PAGE
+title: Products - Green Coffee Catalog
+url: https://bulkgreencoffee.com/products
+description: Browse our catalog of green coffee products from East India (Koraput, Araku Valley), North East India (Assam, Arunachal Pradesh), and South India (Chikmagalur, Coorg, Wayanad, Bababudangiri).
+### END PAGE
+
+### BEGIN PAGE
+title: Contact Bulk Green Coffee
+url: https://bulkgreencoffee.com/contact
+description: Contact information including schedule a meeting, phone numbers, sales inquiries at office@graycup.org, and general enquiries at arjun@graycup.in.
+### END PAGE
+
+### BEGIN PAGE
+title: Bulk Green Coffee - White Label
+url: https://bulkgreencoffee.com/white-label
+description: White label solutions for businesses looking to brand our coffee products.
+### END PAGE
+
+### BEGIN PAGE
+title: Bulk Green Coffee - Sample Request
+url: https://bulkgreencoffee.com/sample-request
+description: Request coffee samples for evaluation before placing bulk orders.
+### END PAGE
+
+### BEGIN PAGE
+title: Bulk Green Coffee - Sites
+url: https://bulkgreencoffee.com/sites
+description: Information about our other web properties and sales channels.
+### END PAGE
+
+### BEGIN PAGE
+title: Bulk Green Coffee - Careers
+url: https://bulkgreencoffee.com/careers
+description: Career opportunities at Gray Cup Enterprises Private Limited.
+### END PAGE
+
+### BEGIN PAGE
+title: Bulk Green Coffee - Team
+url: https://bulkgreencoffee.com/team
+description: Meet the team behind Bulk Green Coffee.
+### END PAGE
+
+### BEGIN PAGE
+title: Bulk Green Coffee - Social Responsibility
+url: https://bulkgreencoffee.com/social-responsibility
+description: Our commitment to social and environmental responsibility.
+### END PAGE
+
+### BEGIN PAGE
+title: Terms of Service
+url: https://bulkgreencoffee.com/terms
+description: Terms of service for Bulk Green Coffee customers.
+### END PAGE
+
+### BEGIN PAGE
+title: Privacy Policy
+url: https://bulkgreencoffee.com/privacy
+description: Privacy policy and data handling practices.
+### END PAGE
+
+### BEGIN PAGE
+title: New Product Request
+url: https://bulkgreencoffee.com/new-product-request
+description: Request products not currently in our catalog.
+### END PAGE
+
+
+---
+
+## Products
+### BEGIN PAGE
+title: Koraput Naturals
+url: https://bulkgreencoffee.com/products/koraput-naturals
+description: Sun-dried natural process Arabica from Koraput, Odisha. Price range: ₹1100-1900/kg. Minimum order: 60kg. SCA Score: 87.
+### END PAGE
+
+### BEGIN PAGE
+title: Koraput HSD (Honey Sun-Dried)
+url: https://bulkgreencoffee.com/products/koraput-hsd
+description: Honey sun-dried Arabica from Koraput, Odisha with stone-fruit and caramel notes. Price range: ₹1200-2100/kg. Minimum order: 60kg. SCA Score: 88.
+### END PAGE
+
+### BEGIN PAGE
+title: Koraput Washed
+url: https://bulkgreencoffee.com/products/koraput-washed
+description: Fully washed Arabica from Koraput, Odisha with floral and tea-like brightness. Price range: ₹1100-1900/kg. Minimum order: 60kg. SCA Score: 87.
+### END PAGE
+
+### BEGIN PAGE
+title: Araku Valley Naturals
+url: https://bulkgreencoffee.com/products/araku-valley-naturals
+description: Natural-process Arabica from Araku Valley, Andhra Pradesh with tropical-fruit brightness. Price range: ₹1200-2000/kg. Minimum order: 60kg. SCA Score: 86.
+### END PAGE
+
+### BEGIN PAGE
+title: Halflong Arabica Naturals
+url: https://bulkgreencoffee.com/products/halflong-arabica-naturals
+description: Rare natural-process Arabica from Halflong, Assam with wine-like and floral notes. Price: ₹1750/kg. Minimum order: 30kg. SCA Score: 89.
+### END PAGE
+
+### BEGIN PAGE
+title: Chirang Robusta Naturals
+url: https://bulkgreencoffee.com/products/chirang-robusta-naturals
+description: Natural-process Robusta from Chirang, Assam with bold, chocolatey body. Price range: ₹750-1100/kg. Minimum order: 60kg.
+### END PAGE
+
+### BEGIN PAGE
+title: Tirap Robusta Naturals
+url: https://bulkgreencoffee.com/products/tirap-robusta-naturals
+description: Natural-process Robusta from Tirap, Arunachal Pradesh with rich body and mild fruity notes. Price range: ₹800-1200/kg. Minimum order: 60kg.
+### END PAGE
+
+### BEGIN PAGE
+title: Chikmagalur Arabica
+url: https://bulkgreencoffee.com/products/chikmagalur-arabica
+description: Premium Arabica from Chikmagalur, Karnataka with bright citrus acidity. Price range: ₹950-1700/kg. Minimum order: 60kg. SCA Score: 85.
+### END PAGE
+
+### BEGIN PAGE
+title: Coorg Arabica
+url: https://bulkgreencoffee.com/products/coorg-arabica
+description: Rich, full-bodied Arabica from Coorg (Kodagu), Karnataka with chocolate and spice notes. Price range: ₹900-1600/kg. Minimum order: 60kg. SCA Score: 84.
+### END PAGE
+
+### BEGIN PAGE
+title: Wayanad Arabica
+url: https://bulkgreencoffee.com/products/wayanad-arabica
+description: Smooth Arabica from Wayanad, Kerala with mild nuttiness and subtle floral hints. Price range: ₹900-1650/kg. Minimum order: 60kg. SCA Score: 84.
+### END PAGE
+
+### BEGIN PAGE
+title: Bababudangiri Arabica
+url: https://bulkgreencoffee.com/products/bababudangiri-arabica
+description: Rare Arabica from Bababudangiri hills, Karnataka (India's coffee birthplace) with earthy complexity. Price range: ₹1200-2200/kg. Minimum order: 30kg. SCA Score: 86.
+### END PAGE
+
+
+---
+
+## Site Metadata
+site_name: Bulk Green Coffee
+site_url: https://bulkgreencoffee.com
+business_name: Gray Cup Enterprises Private Limited
+country: India
+contact_email: office@graycup.org
+contact_phone: +91 85279 14317
+business_description: B2B green coffee supplier helping Roasters and Distributors source better Indian Coffee.
