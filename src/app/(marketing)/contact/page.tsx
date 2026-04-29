@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 /* ---------- Page ---------- */
 export default function ContactPage() {
   return (
-    <div className="py-12">
+    <div className="py-12 min-h-screen">
       <div className="max-w-5xl mx-auto px-4 lg:px-6">
         {/* Header */}
         <div className="mb-8">
