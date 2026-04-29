@@ -246,6 +246,54 @@ export type Database = {
         };
         Relationships: [];
       };
+      bgc_quote_requests: {
+        Row: {
+          id: string;
+          company_name: string;
+          contact_name: string;
+          email: string;
+          phone: string | null;
+          product_id: string | null;
+          product_name: string | null;
+          grade: string | null;
+          quantity: number | null;
+          message: string | null;
+          resolved: boolean;
+          vaulted: boolean;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          company_name: string;
+          contact_name: string;
+          email: string;
+          phone?: string | null;
+          product_id?: string | null;
+          product_name?: string | null;
+          grade?: string | null;
+          quantity?: number | null;
+          message?: string | null;
+          resolved?: boolean;
+          vaulted?: boolean;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          company_name?: string;
+          contact_name?: string;
+          email?: string;
+          phone?: string | null;
+          product_id?: string | null;
+          product_name?: string | null;
+          grade?: string | null;
+          quantity?: number | null;
+          message?: string | null;
+          resolved?: boolean;
+          vaulted?: boolean;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never;
