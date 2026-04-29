@@ -16,7 +16,6 @@ export default function Home() {
       <div className="mx-auto px-4 lg:px-6 h-auto my-10">
         <div className="md:min-h-screen pt-10 pb-20 max-w-6xl mx-auto md:pb-0 flex flex-col justify-center">
           <div>
-            {/* Left Column */}
             <div>
               <div>
                 <h1 className="text-4xl font-semibold text-black pt-2 max-w-xl">

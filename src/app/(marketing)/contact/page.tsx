@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 /* ---------- Page ---------- */
 export default function ContactPage() {
   return (
-    <div className="py-12 min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 lg:px-6">
+    <div className="mt-10 min-h-screen">
+      <div className="max-w-6xl pt-10 mx-auto px-4 lg:px-6">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl md:text-3xl font-semibold text-black mb-2">
