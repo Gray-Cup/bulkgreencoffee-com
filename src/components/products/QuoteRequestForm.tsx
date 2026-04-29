@@ -92,7 +92,7 @@ export function QuoteRequestForm({
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/quote-request", {
+      const response = await fetch("/api/bgc-quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

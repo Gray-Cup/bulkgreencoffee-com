@@ -25,7 +25,6 @@ export function Navbar() {
               {[
                 ["Products", "/products"],
                 ["Product Request", "/new-product-request"],
-                ["Price Quote", "/price-quote"],
                 ["White Label", "/white-label"],
               ].map(([label, href]) => (
                 <Link
@@ -125,7 +124,6 @@ export function Navbar() {
             {[
               ["Products", "/products"],
               ["Product Request", "/new-product-request"],
-              ["Price Quote", "/price-quote"],
               ["White Label", "/white-label"],
             ].map(([label, href]) => (
               <Link

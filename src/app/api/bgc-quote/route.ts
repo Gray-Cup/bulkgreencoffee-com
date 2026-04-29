@@ -47,19 +47,17 @@ export async function POST(request: NextRequest) {
       contactName,
       email,
       phone,
-      category,
-      productName,
-      origin,
-      grade,
       quantity,
-      targetPrice,
-      notes,
+      grade,
+      message,
+      productId,
+      productName,
       turnstileToken,
     } = body;
 
-    if (!companyName || !contactName || !email || !productName || !quantity) {
+    if (!companyName || !contactName || !email || !quantity) {
       return NextResponse.json(
-        { error: "Company name, contact name, email, product name, and quantity are required" },
+        { error: "Company name, contact name, email, and quantity are required" },
         { status: 400 },
       );
     }
@@ -75,34 +73,32 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const { error: dbError } = await supabase.from("price_quotes").insert({
+    const { error: dbError } = await supabase.from("bgc_quote_requests").insert({
       company_name: companyName.trim(),
       contact_name: contactName.trim(),
       email: email.trim().toLowerCase(),
       phone: phone?.trim() || null,
-      category: category || null,
-      product_name: productName.trim(),
-      origin: origin?.trim() || null,
+      quantity: parseInt(quantity) || 0,
       grade: grade || null,
-      quantity: quantity.trim(),
-      target_price: targetPrice?.trim() || null,
-      notes: notes?.trim() || null,
+      message: message?.trim() || null,
+      product_id: productId || null,
+      product_name: productName || null,
     });
 
     if (dbError) {
       console.error("Supabase insert error:", dbError);
       return NextResponse.json(
-        { error: "Failed to save price quote request. Please try again." },
+        { error: "Failed to save quote request. Please try again." },
         { status: 500 },
       );
     }
 
     return NextResponse.json({
       success: true,
-      message: "Price quote request submitted successfully",
+      message: "Quote request submitted successfully",
     });
   } catch (error) {
-    console.error("Price quote API error:", error);
+    console.error("BGC quote API error:", error);
     return NextResponse.json(
       { error: "Internal server error. Please try again later." },
       { status: 500 },
