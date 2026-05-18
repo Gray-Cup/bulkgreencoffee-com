@@ -1,13 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
+import { db } from "@/db";
+import { bulkgreencoffee_site } from "@/db/schema";
 
 const CASHFREE_API_URL = "https://api.cashfree.com/pg/links";
 const CASHFREE_CLIENT_ID = process.env.CASHFREE_CLIENT_ID;
 const CASHFREE_CLIENT_SECRET = process.env.CASHFREE_CLIENT_SECRET;
 
-interface PaymentRequest {
-  customerName: string;
-  customerPhone: string;
-  customerEmail?: string;
+export interface SampleOrderRequest {
+  name: string;
+  phone: string;
+  email?: string;
+  country: string;
+  pincode: string;
+  address: string;
+  gstOrTaxId?: string;
+  businessType?: string;
+  products: string[];       // slugs
+  quantityTier: string;     // "100g" | "1kg" | "3kg" | "5kg"
+  totalAmount: number;      // INR, already calculated on client
 }
 
 export async function POST(request: NextRequest) {
@@ -19,52 +29,58 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body: PaymentRequest = await request.json();
-    const { customerName, customerPhone, customerEmail } = body;
+    const body: SampleOrderRequest = await request.json();
+    const { name, phone, email, country, pincode, address, gstOrTaxId, businessType, products, quantityTier, totalAmount } = body;
 
-    if (!customerName || !customerPhone) {
+    if (!name || !phone || !address || !pincode || products.length === 0) {
       return NextResponse.json(
-        { error: "Customer name and phone are required" },
+        { error: "Name, phone, address, pincode and at least one product are required" },
         { status: 400 },
       );
     }
 
-    // Generate unique IDs
-    const linkId = `sample_${Date.now()}_${Math.random()
-      .toString(36)
-      .substring(2, 9)}`;
-
-    const orderId = `order_${Date.now()}_${Math.random()
-      .toString(36)
-      .substring(2, 7)}`;
-
-    // Set expiry to 10 minutes from now
+    const linkId = `bgc_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`;
     const expiryTime = new Date();
-    expiryTime.setMinutes(expiryTime.getMinutes() + 10);
+    expiryTime.setMinutes(expiryTime.getMinutes() + 30);
 
     const origin = request.headers.get("origin") || "https://bulkgreencoffee.com";
 
+    // Save order to database first
+    await db.insert(bulkgreencoffee_site).values({
+      name,
+      phone: phone.replace(/\D/g, "").slice(-12),
+      email:          email || null,
+      country,
+      pincode,
+      address,
+      gst_or_tax_id:  gstOrTaxId || null,
+      business_type:  businessType || null,
+      products:       JSON.stringify(products),
+      quantity_tier:  quantityTier,
+      total_amount:   totalAmount,
+      link_id:        linkId,
+      payment_status: "pending",
+    });
+
     const paymentLinkPayload = {
       link_id: linkId,
-      order_id: orderId,
-
-      link_amount: 299,
+      link_amount: totalAmount,
       link_currency: "INR",
-      link_purpose: "Sample Request - Bulk Green Coffee",
+      link_purpose: `Bulk Green Coffee — ${quantityTier} sample${products.length > 1 ? "s" : ""} (${products.join(", ")})`,
 
       customer_details: {
-        customer_name: customerName,
-        customer_phone: customerPhone.replace(/\D/g, "").slice(-10),
-        ...(customerEmail && { customer_email: customerEmail }),
+        customer_name:  name,
+        customer_phone: phone.replace(/\D/g, "").slice(-10),
+        ...(email && { customer_email: email }),
       },
 
       link_meta: {
-        return_url: `${origin}/sample-request?link_id=${linkId}`,
+        return_url: `${origin}/buy-samples/success?link_id=${linkId}`,
       },
 
       link_notify: {
-        send_sms: true,
-        send_email: true,
+        send_sms:   true,
+        send_email: !!email,
       },
 
       link_expiry_time: expiryTime.toISOString(),
@@ -73,10 +89,10 @@ export async function POST(request: NextRequest) {
     const response = await fetch(CASHFREE_API_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "x-client-id": CASHFREE_CLIENT_ID,
+        "Content-Type":    "application/json",
+        "x-client-id":     CASHFREE_CLIENT_ID,
         "x-client-secret": CASHFREE_CLIENT_SECRET,
-        "x-api-version": "2023-08-01",
+        "x-api-version":   "2023-08-01",
       },
       body: JSON.stringify(paymentLinkPayload),
     });
@@ -92,16 +108,12 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({
-      success: true,
+      success:     true,
       paymentLink: data.link_url,
-      linkId: data.link_id,
-      orderId,
+      linkId,
     });
   } catch (error) {
     console.error("Payment creation error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
