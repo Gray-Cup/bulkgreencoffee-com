@@ -6,12 +6,12 @@ export const specialtyCoffeeProducts: Product[] = [
   {
     slug: "koraput-naturals",
     variety: "Arabica",
-    name: "Koraput Naturals",
+    name: "Koraput Arabica Naturals Green Coffee",
     image: "/products/specific/assam.jpg",
     description:
       "Sun-dried natural process green coffee beans from the tribal highlands of Koraput, Odisha — bold, fruity, and traceable to small-holder farms.",
     longDescription:
-      "Grown at 900–1200m in the Eastern Ghats by tribal farming communities in Koraput district, these natural-process beans are dried whole on raised beds under the Odisha sun. The result is an intense, fruit-forward cup with wine-like complexity and a heavy, lingering body. Each lot is micro-milled and hand-sorted for export quality. Ideal for specialty roasters seeking authentic Indian single-origin coffees with a compelling provenance story.",
+      "Grown at 900-1200m in the Eastern Ghats by tribal farming communities in Koraput district, these natural-process beans are dried whole on raised beds under the Odisha sun. The result is an intense, fruit-forward cup with wine-like complexity and a heavy, lingering body. Each lot is micro-milled and hand-sorted for export quality. Ideal for specialty roasters seeking authentic Indian single-origin coffees with a compelling provenance story.",
     details: [
       "Natural sun-dried process",
       "Tribal smallholder farms",
@@ -39,7 +39,7 @@ export const specialtyCoffeeProducts: Product[] = [
   {
     slug: "koraput-hsd",
     variety: "Arabica",
-    name: "Koraput HSD",
+    name: "Koraput Arabica Honey Sun-Dried Green Coffee",
     image: "/products/specific/hsd.jpg",
     description:
       "Honey Sun-Dried (HSD) green coffee from Koraput, Odisha — a unique process that delivers sweetness and body between naturals and washed.",
@@ -72,7 +72,7 @@ export const specialtyCoffeeProducts: Product[] = [
   {
     slug: "koraput-washed",
     variety: "Arabica",
-    name: "Koraput Washed",
+    name: "Koraput Arabica Washed Green Coffee",
     image: "/products/specific/washed.jpg",
     description:
       "Fully washed green coffee beans from Koraput, Odisha — clean, bright, and expressive of the Eastern Ghats terroir.",
@@ -103,46 +103,8 @@ export const specialtyCoffeeProducts: Product[] = [
     googleProductCategory: "1868",
   },
   {
-    slug: "araku-valley-naturals",
-    name: "Araku Valley Naturals",
-    image: "/products/specific/naturals.jpg",
-    description:
-      "Natural-process Arabica green coffee from the lush highlands of Araku Valley, Andhra Pradesh — vibrant, complex, and grown by tribal farming cooperatives.",
-    longDescription:
-      "Araku Valley sits at 900–1100m in the Eastern Ghats of Andhra Pradesh, where tribal cooperatives — supported by the Girijan Cooperative Corporation — cultivate shade-grown Arabica under a rich biodiversity canopy. Natural-process drying on raised beds develops the valley's characteristic tropical-fruit brightness, honeyed sweetness, and clean finish. Araku has earned international acclaim for its specialty potential, and these lots represent the finest the valley has to offer.",
-    details: [
-      "Natural sun-dried process",
-      "Shade-grown under Eastern Ghats forest canopy",
-      "Tribal cooperative sourcing (GCC)",
-      "Tropical-fruit brightness and honey sweetness",
-      "Hand-sorted for export",
-      "Internationally recognised specialty origin",
-    ],
-    locations: ["Araku Valley, Andhra Pradesh"],
-    category: "Coffee",
-    categoryTwo: "Single Origin",
-    region: "East India",
-    priceRange: { min: 1200, max: 2000, unit: "/kg" },
-    minimumOrder: { quantity: 10, unit: "kg" },
-    grades: ["Grade 1", "Grade 2", "PB (Peaberry)"],
-    packaging: ["60kg GrainPro jute bags", "30kg bags", "Bulk containers"],
-    varietal: "S795, Chandragiri",
-    scaScore: 86,
-    scale: 3,
-    origin: {
-      state: "Andhra Pradesh",
-      region: "Araku Valley",
-      variety: "Arabica",
-      elevation: "900–1100 masl",
-    },
-    sku: "BGC-ARK-NAT-001",
-    brand: "Bulk Green Coffee",
-    availability: "in_stock",
-    googleProductCategory: "1868",
-  },
-  {
     slug: "halflong-arabica-naturals",
-    name: "Halflong Arabica Naturals",
+    name: "Halflong Arabica Naturals Green Coffee",
     image: "/products/specific/naturals.jpg",
     description:
       "Natural-process Arabica green coffee from the misty highlands of Halflong, Assam — rare, aromatic, and distinctly North-East Indian.",
@@ -201,7 +163,7 @@ export const specialtyCoffeeProducts: Product[] = [
   },
   {
     slug: "chirang-robusta-naturals",
-    name: "Chirang Robusta Naturals",
+    name: "Chirang Robusta Naturals Green Coffee",
     image: "/products/specific/assam.jpg",
     description:
       "Natural-process Robusta green coffee from the lowland forests of Chirang, Assam — bold, earthy, and distinctly North-East Indian.",
@@ -238,7 +200,7 @@ export const specialtyCoffeeProducts: Product[] = [
   },
   {
     slug: "tirap-robusta-naturals",
-    name: "Tirap Robusta Naturals",
+    name: "Tirap Robusta Naturals Green Coffee",
     image: "/products/north-east/tirap-robusta-naturals.png",
     description:
       "Natural-process Robusta green coffee from the hilly forests of Tirap, Arunachal Pradesh — rich, full-bodied, and traceable to tribal farms.",
@@ -284,7 +246,7 @@ export const specialtyCoffeeProducts: Product[] = [
 
   {
     slug: "chikmagalur-arabica",
-    name: "Chikmagalur Arabica",
+    name: "Chikmagalur Arabica Green Coffee",
     image: "/products/green-coffee-beans.png",
     description:
       "Premium green Arabica from the misty coffee estates of Chikmagalur, Karnataka — the heartland of Indian coffee with bright acidity and floral notes.",
@@ -322,7 +284,7 @@ export const specialtyCoffeeProducts: Product[] = [
   },
   {
     slug: "coorg-arabica",
-    name: "Coorg Arabica",
+    name: "Coorg Arabica Green Coffee",
     image: "/products/green-coffee-beans.png",
     description:
       "Rich, full-bodied green Arabica from Coorg (Kodagu), Karnataka — grown on lush planters' estates at elevation with excellent body and mild acidity.",
@@ -360,7 +322,7 @@ export const specialtyCoffeeProducts: Product[] = [
   },
   {
     slug: "wayanad-arabica",
-    name: "Wayanad Arabica",
+    name: "Wayanad Arabica Green Coffee",
     image: "/products/green-coffee-beans.png",
     description:
       "Smooth, well-rounded green Arabica from the highland forests of Wayanad, Kerala — celebrated for its mild flavour and excellent cup consistency.",
@@ -398,7 +360,7 @@ export const specialtyCoffeeProducts: Product[] = [
   },
   {
     slug: "bababudangiri-arabica",
-    name: "Bababudangiri Arabica",
+    name: "Bababudangiri Arabica Green Coffee",
     image: "/products/green-coffee-beans.png",
     description:
       "Rare single-origin green Arabica from the ancient Bababudangiri hills, Karnataka — India's mythical coffee birthplace with a distinctive earthy complexity.",

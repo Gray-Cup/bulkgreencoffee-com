@@ -80,10 +80,10 @@ export default function BuySampleSlugPage() {
                     key={t.label}
                     type="button"
                     onClick={() => setActiveTier(t.label)}
-                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
                       activeTier === t.label
                         ? "bg-white text-black shadow-sm"
-                        : "text-gray-500 hover:text-gray-800"
+                        : "text-gray-500 hover:text-gray-800 hover:bg-white/60"
                     }`}
                   >
                     {t.label}
