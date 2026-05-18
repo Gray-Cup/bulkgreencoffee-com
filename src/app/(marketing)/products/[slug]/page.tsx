@@ -217,7 +217,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
               {/* Buy Samples CTA */}
               <Link
-                href={`/buy-samples?product=${product.slug}`}
+                href={`/buy-samples/${product.slug}`}
                 className="flex items-center justify-center gap-2 w-full h-11 rounded-xl bg-teal-50 border border-teal-200 text-teal-800 text-sm font-medium hover:bg-teal-100 transition-colors"
               >
                 Buy Samples

@@ -3,6 +3,7 @@
 import React, { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -143,6 +144,12 @@ function BuySamplesInner() {
                     >
                       {isSelected ? "Remove" : "Add to order"}
                     </button>
+                    <Link
+                      href={`/buy-samples/${product.slug}`}
+                      className="w-full h-9 rounded-xl text-sm font-medium border border-gray-200 text-gray-700 hover:border-gray-400 hover:text-black flex items-center justify-center transition-colors"
+                    >
+                      Buy now →
+                    </Link>
                   </div>
                 </div>
               );
