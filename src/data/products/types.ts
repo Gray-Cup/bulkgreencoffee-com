@@ -33,6 +33,7 @@ export type Product = {
     elevation: string;
   };
   estateImages?: string[];
+  pageDescription?: string;
   reviews?: {
     author: string;
     role?: string;

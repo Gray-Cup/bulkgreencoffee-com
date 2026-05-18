@@ -87,7 +87,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="max-w-7xl mx-auto">
 
           {/* Sticky breadcrumb */}
-          <nav className="sticky top-16 z-20 bg-white py-3 -mx-4 px-4 lg:-mx-6 lg:px-6 border-b border-gray-100 mb-8">
+          {/* <nav className="sticky top-16 z-20 bg-white py-3 -mx-4 px-4 lg:-mx-6 lg:px-6 border-b border-gray-100 mb-8">
             <ol className="flex items-center gap-2 text-sm text-muted-foreground">
               <li>
                 <Link href="/" className="hover:text-black transition-colors">
@@ -103,7 +103,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <li>/</li>
               <li className="text-black font-medium">{product.name}</li>
             </ol>
-          </nav>
+          </nav> */}
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Title + Image */}
@@ -215,6 +215,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {/* Price Calculator */}
               <ProductConfigurator product={product} />
 
+              {/* Buy Samples CTA */}
+              <Link
+                href={`/buy-samples?product=${product.slug}`}
+                className="flex items-center justify-center gap-2 w-full h-11 rounded-xl bg-teal-50 border border-teal-200 text-teal-800 text-sm font-medium hover:bg-teal-100 transition-colors"
+              >
+                Buy Samples
+              </Link>
+
               {/* Accordions */}
               <Accordion type="multiple" defaultValue={["description"]}>
                 <AccordionItem value="description">
@@ -269,7 +277,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div>
 
       {/* Wide estate section — outside max-w-7xl, breaks to full width */}
-      {(product.estateImages?.length || product.reviews?.length) && (
+      {!!(product.estateImages?.length || product.reviews?.length) && (
         <div className="border-t border-gray-100 py-16 px-4 lg:px-6">
           {/* Section title */}
           <div className="max-w-7xl mx-auto mb-12">
@@ -320,6 +328,21 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Page description — free-form editorial text, written per product */}
+      {product.pageDescription && (
+        <div className="border-t border-gray-100 py-16 px-4 lg:px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="prose prose-gray max-w-none">
+              {product.pageDescription.split("\n\n").map((para, i) => (
+                <p key={i} className="text-gray-700 leading-relaxed mb-4 last:mb-0">
+                  {para}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </>

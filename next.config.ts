@@ -1,14 +1,9 @@
 import type { NextConfig } from "next";
-import createMDX from "@next/mdx";
-import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
 
 const nextConfig: NextConfig = {
-  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   async headers() {
     return [
       {
-        // Fonts: 2 years
         source: "/:all*(ttf|otf|woff|woff2)",
         headers: [
           {
@@ -18,7 +13,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Images: 1 week
         source: "/:all*(svg|jpg|jpeg|png|gif|ico|webp)",
         headers: [
           {
@@ -28,7 +22,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Videos: 1 week (or you can set differently)
         source: "/:all*(mp4|webm|mov)",
         headers: [
           {
@@ -38,7 +31,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // All other pages: 1 hour with stale-while-revalidate
         source: "/:path*",
         headers: [
           {
@@ -51,11 +43,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-const withMDX = createMDX({
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeHighlight],
-  },
-});
-
-export default withMDX(nextConfig);
+export default nextConfig;
