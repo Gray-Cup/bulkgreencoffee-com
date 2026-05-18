@@ -5,6 +5,8 @@ export default function Footer() {
     { href: "/about", label: "About" },
     { href: "/products", label: "Products" },
     { href: "/contact", label: "Contact" },
+    { href: "/terms", label: "Terms & Conditions" },
+    { href: "/refunds", label: "Refunds & Cancellations" },
   ];
 
   const socialLinks = [

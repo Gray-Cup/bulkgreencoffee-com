@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
 import { CheckoutForm } from "@/components/buy-samples/CheckoutForm";
+import { useCurrency } from "@/components/currency-provider";
+import { formatPrice, convertPrice } from "@/lib/currency";
 
 const TIERS = [
   { label: "100g", grams: 100,  packaging: 30 },
@@ -32,8 +34,10 @@ function AddProductCard({
   onAdd: (tier: TierLabel) => void;
 }) {
   const [tier, setTier] = useState<TierLabel>(defaultTier);
+  const { currency, rates } = useCurrency();
   const tierData = TIERS.find((t) => t.label === tier)!;
-  const price    = calcPrice(product.priceRange.min, tierData.grams, tierData.packaging);
+  const priceINR = calcPrice(product.priceRange.min, tierData.grams, tierData.packaging);
+  const fmt = (inr: number) => formatPrice(convertPrice(inr, currency, rates), currency);
 
   return (
     <div className="flex flex-col rounded-2xl border border-gray-200 bg-white overflow-hidden hover:border-gray-300 hover:shadow-sm transition-all">
@@ -61,7 +65,7 @@ function AddProductCard({
             </button>
           ))}
         </div>
-        <p className="text-base font-semibold text-black">₹{price}</p>
+        <p className="text-base font-semibold text-black">{fmt(priceINR)}</p>
         <button
           type="button"
           onClick={() => onAdd(tier)}
@@ -118,6 +122,9 @@ function BuySamplesInner() {
     (sum, { product, tierData }) => sum + calcPrice(product.priceRange.min, tierData.grams, tierData.packaging),
     0,
   );
+
+  const { currency, rates } = useCurrency();
+  const fmt = (inr: number) => formatPrice(convertPrice(inr, currency, rates), currency);
 
   // Tier for the selection grid prices
   const gridTier = TIERS.find((t) => t.label === activeTier)!;
@@ -209,7 +216,7 @@ function BuySamplesInner() {
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground">{gridTier.label}</p>
-                      <p className="text-base font-semibold text-black">₹{price}</p>
+                      <p className="text-base font-semibold text-black">{fmt(price)}</p>
                     </div>
                     <button
                       type="button"
@@ -246,7 +253,7 @@ function BuySamplesInner() {
               <p className="font-semibold text-black text-sm">
                 {selected.length} product{selected.length !== 1 ? "s" : ""}
               </p>
-              <p className="text-md sm:text-lg md:text-xl font-semibold text-black">₹{orderTotal}</p>
+              <p className="text-md sm:text-lg md:text-xl font-semibold text-black">{fmt(orderTotal)}</p>
             </div>
             <Button variant="teal" size="lg" className="shrink-0" onClick={() => setStep("checkout")}>
               Proceed to Checkout
@@ -290,7 +297,7 @@ function BuySamplesInner() {
                       <div className="flex items-start justify-between gap-2">
                         <p className="text-sm font-medium text-black leading-tight">{product.name}</p>
                         <div className="flex items-center gap-2 shrink-0">
-                          <p className="text-sm font-semibold text-black">₹{price}</p>
+                          <p className="text-sm font-semibold text-black">{fmt(price)}</p>
                           <button
                             type="button"
                             onClick={() => toggle(product.slug)}
@@ -326,7 +333,7 @@ function BuySamplesInner() {
             {selectedProducts.length > 0 && (
               <div className="flex justify-between px-4 py-3 border-t border-gray-200 bg-gray-50">
                 <p className="text-sm font-semibold text-black">Total</p>
-                <p className="text-sm font-semibold text-black">₹{orderTotal}</p>
+                <p className="text-sm font-semibold text-black">{fmt(orderTotal)}</p>
               </div>
             )}
           </div>

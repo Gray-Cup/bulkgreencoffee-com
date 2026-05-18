@@ -14,6 +14,13 @@ export default function FooterBelow() {
     { href: "https://instagram.com/thegraycup", label: "Instagram" },
   ];
 
+  const policyLinks = [
+    { href: "/contact", label: "Contact Us" },
+    { href: "/terms", label: "Terms & Conditions" },
+    { href: "/refunds", label: "Refunds & Cancellations" },
+    { href: "/privacy", label: "Privacy Policy" },
+  ];
+
   const resourceLinks = [
     { href: "https://graycup.org", label: "Company Site" },
     { href: "https://bulkgreencoffee.com/", label: "B2B Store" },
@@ -26,14 +33,27 @@ export default function FooterBelow() {
     <footer className="bg-teal-600">
       <div className="max-w-7xl mx-auto px-4 lg:px-6 pb-8">
 
+        {/* Policy links */}
+        <div className="pt-6 flex flex-wrap gap-x-6 gap-y-2">
+          {policyLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm text-white/80 hover:text-white hover:underline transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
         {/* Bottom bar */}
-        <div className="pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-md text-white font-medium">
+        <div className="pt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-md text-white font-medium border-t border-white/20 mt-4">
           <p>
             © {new Date().getFullYear()} Gray Cup Enterprises Pvt. Ltd. All
             rights reserved.
           </p>
 
-          <nav className="flex items-center gap-x-6 text-md">
+          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-md">
             {resourceLinks.map((link) => (
               <Link
                 key={link.href}
