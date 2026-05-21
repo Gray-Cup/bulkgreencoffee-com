@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -144,7 +145,7 @@ export function CheckoutForm({ products, quantityTier, totalAmount, renderSummar
           onClick={onBack}
           className="text-sm text-muted-foreground hover:text-black mb-8 flex items-center gap-1 transition-colors active:opacity-60"
         >
-          ← Back to products
+          <ChevronLeft className="w-4 h-4" /> Back to products
         </button>
       )}
 

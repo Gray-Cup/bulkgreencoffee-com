@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
 import { notFound, useParams } from "next/navigation";
 import { getProductBySlug } from "@/data/products";
 import { Badge } from "@/components/ui/badge";
@@ -38,7 +39,7 @@ export default function BuySampleSlugPage() {
           href="/buy-samples"
           className="text-sm text-muted-foreground hover:text-black mb-8 inline-flex items-center gap-1 transition-colors"
         >
-          ← All samples
+          <ChevronLeft className="w-4 h-4" /> All samples
         </Link>
 
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">

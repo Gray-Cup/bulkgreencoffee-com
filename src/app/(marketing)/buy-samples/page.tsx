@@ -340,7 +340,7 @@ function BuySamplesInner() {
                       <button
                         type="button"
                         onClick={() => setSelected((prev) => prev.filter((s) => !(s.slug === product.slug && s.tier === itemTier)))}
-                        className="absolute top-2 right-2 z-10 text-gray-300 hover:text-red-400 transition-colors text-sm leading-none bg-white rounded-full w-5 h-5 flex items-center justify-center shadow-sm"
+                        className="absolute top-2 right-2 z-10 text-gray-400 hover:text-red-500 transition-colors text-sm leading-none bg-white rounded-full w-5 h-5 flex items-center justify-center shadow-sm"
                       >
                         ✕
                       </button>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
 
 export default function BuySamplesSuccessPage() {
   return (
@@ -22,7 +23,7 @@ export default function BuySamplesSuccessPage() {
           href="/products"
           className="inline-flex items-center gap-2 text-sm font-medium text-teal-700 hover:text-teal-900 transition-colors"
         >
-          ← Browse all products
+          <ChevronLeft className="w-4 h-4" /> Browse all products
         </Link>
       </div>
     </div>
