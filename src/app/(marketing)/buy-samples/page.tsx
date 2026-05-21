@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -82,8 +82,8 @@ function AddProductCard({
 function BuySamplesInner() {
   const searchParams = useSearchParams();
   const preselected  = searchParams.get("product");
+  const router       = useRouter();
 
-  const [step,       setStep]       = useState<"select" | "checkout">("select");
   const [activeTier, setActiveTier] = useState<TierLabel>(() => {
     if (typeof window === "undefined") return "100g";
     return (localStorage.getItem("bgc_tier") as TierLabel) ?? "100g";
@@ -139,17 +139,10 @@ function BuySamplesInner() {
         : [...prev, { slug, tier: activeTier }],
     );
 
-  // Dominant tier for the checkout form (used for tax field logic)
-  const tierCounts = selected.reduce((acc, s) => { acc[s.tier] = (acc[s.tier] ?? 0) + 1; return acc; }, {} as Record<string, number>);
-  const quantityTier = (Object.entries(tierCounts).sort(([, a], [, b]) => b - a)[0]?.[0] ?? "100g") as TierLabel;
-
   React.useEffect(() => { localStorage.setItem("bgc_selected", JSON.stringify(selected)); }, [selected]);
   React.useEffect(() => { localStorage.setItem("bgc_tier", activeTier); }, [activeTier]);
-  React.useEffect(() => { window.scrollTo({ top: 0, behavior: "instant" }); }, [step]);
 
-  /* ── STEP 1: product selection ───────────────────────────────────── */
-  if (step === "select") {
-    return (
+  return (
       <div className="min-h-screen pb-32">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 pt-12 pb-6">
           <h1 className="text-3xl font-semibold text-black mb-2">Buy Samples</h1>
@@ -263,7 +256,7 @@ function BuySamplesInner() {
               >
                 Clear
               </button>
-              <Button variant="outline" size="lg" className="border-black/20 bg-yellow-100 hover:bg-yellow-50" onClick={() => setShowItemsOpen(true)}>
+              <Button variant="lightgraybg" size="sm" onClick={() => setShowItemsOpen(true)}>
                 Show Items
               </Button>
               <Button variant="teal" size="lg" onClick={() => setStep("checkout")}>
