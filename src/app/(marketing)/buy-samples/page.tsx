@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { products } from "@/data/products";
 import { CheckoutForm } from "@/components/buy-samples/CheckoutForm";
 import { useCurrency } from "@/components/currency-provider";
@@ -107,6 +108,8 @@ function BuySamplesInner() {
     }
   });
 
+  const [showItemsOpen, setShowItemsOpen] = useState(false);
+
   const selectedSlugs    = selected.map((s) => s.slug);
   const selectedProducts = selected
     .map((s) => {
@@ -131,13 +134,10 @@ function BuySamplesInner() {
 
   const toggle = (slug: string) =>
     setSelected((prev) =>
-      prev.find((s) => s.slug === slug)
-        ? prev.filter((s) => s.slug !== slug)
+      prev.find((s) => s.slug === slug && s.tier === activeTier)
+        ? prev.filter((s) => !(s.slug === slug && s.tier === activeTier))
         : [...prev, { slug, tier: activeTier }],
     );
-
-  const setItemTier = (slug: string, tier: TierLabel) =>
-    setSelected((prev) => prev.map((s) => (s.slug === slug ? { ...s, tier } : s)));
 
   // Dominant tier for the checkout form (used for tax field logic)
   const tierCounts = selected.reduce((acc, s) => { acc[s.tier] = (acc[s.tier] ?? 0) + 1; return acc; }, {} as Record<string, number>);
@@ -182,7 +182,7 @@ function BuySamplesInner() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {products.map((product) => {
-              const isSelected = selectedSlugs.includes(product.slug);
+              const isSelected = selected.some((s) => s.slug === product.slug && s.tier === activeTier);
               const price      = calcPrice(product.priceRange.min, gridTier.grams, gridTier.packaging);
               return (
                 <div
@@ -251,15 +251,84 @@ function BuySamplesInner() {
           <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8 flex items-center justify-between gap-4">
             <div>
               <p className="font-semibold text-black text-sm">
-                {selected.length} product{selected.length !== 1 ? "s" : ""}
+                {selected.length} item{selected.length !== 1 ? "s" : ""}
               </p>
               <p className="text-md sm:text-lg md:text-xl font-semibold text-black">{fmt(orderTotal)}</p>
             </div>
-            <Button variant="teal" size="lg" className="shrink-0" onClick={() => setStep("checkout")}>
-              Proceed to Checkout
-            </Button>
+            <div className="flex items-center gap-3 shrink-0">
+              <Button variant="outline" size="lg" className="border-black/20 bg-yellow-100 hover:bg-yellow-50" onClick={() => setShowItemsOpen(true)}>
+                Show Items
+              </Button>
+              <Button variant="teal" size="lg" onClick={() => setStep("checkout")}>
+                Proceed to Checkout
+              </Button>
+            </div>
           </div>
         </div>
+
+        {/* Show Items dialog */}
+        <Dialog open={showItemsOpen} onOpenChange={setShowItemsOpen}>
+          <DialogContent className="max-w-md max-h-[80vh] flex flex-col">
+            <DialogHeader>
+              <DialogTitle>Your Items ({selected.length})</DialogTitle>
+            </DialogHeader>
+            <div className="flex-1 overflow-y-auto divide-y divide-gray-100">
+              {selectedProducts.map(({ product, tier: itemTier, tierData }) => {
+                const price = calcPrice(product.priceRange.min, tierData.grams, tierData.packaging);
+                return (
+                  <div key={`${product.slug}-${itemTier}`} className="py-3 flex items-start gap-3">
+                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-gray-50 shrink-0">
+                      <Image src={product.image} alt={product.name} fill className="object-contain p-1" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <p className="text-sm font-medium text-black leading-tight">{product.name}</p>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <p className="text-sm font-semibold text-black">{fmt(price)}</p>
+                          <button
+                            type="button"
+                            onClick={() => setSelected((prev) => prev.filter((s) => !(s.slug === product.slug && s.tier === itemTier)))}
+                            className="text-gray-300 hover:text-red-400 transition-colors text-base leading-none"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      </div>
+                      <div className="flex gap-1.5 mt-2 flex-wrap">
+                        {TIERS.map((t) => (
+                          <button
+                            key={t.label}
+                            type="button"
+                            onClick={() =>
+                              setSelected((prev) =>
+                                prev.map((s) =>
+                                  s.slug === product.slug && s.tier === itemTier ? { ...s, tier: t.label } : s
+                                )
+                              )
+                            }
+                            className={`px-3 py-1 text-xs rounded-lg border font-medium transition-colors cursor-pointer ${
+                              itemTier === t.label
+                                ? "bg-neutral-800 border-neutral-800 text-white"
+                                : "border-gray-200 text-gray-500 hover:border-gray-400 hover:text-gray-700"
+                            }`}
+                          >
+                            {t.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            {selectedProducts.length > 0 && (
+              <div className="border-t border-gray-200 pt-3 flex justify-between items-center">
+                <p className="text-sm font-semibold text-black">Total</p>
+                <p className="text-sm font-semibold text-black">{fmt(orderTotal)}</p>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     );
   }
@@ -286,7 +355,7 @@ function BuySamplesInner() {
               const price = calcPrice(product.priceRange.min, tierData.grams, tierData.packaging);
               return (
                 <div
-                  key={product.slug}
+                  key={`${product.slug}-${itemTier}`}
                   className={`px-4 py-3 ${i < selectedProducts.length - 1 ? "border-b border-gray-100" : ""}`}
                 >
                   <div className="flex items-start gap-3">
@@ -300,20 +369,25 @@ function BuySamplesInner() {
                           <p className="text-sm font-semibold text-black">{fmt(price)}</p>
                           <button
                             type="button"
-                            onClick={() => toggle(product.slug)}
+                            onClick={() => setSelected((prev) => prev.filter((s) => !(s.slug === product.slug && s.tier === itemTier)))}
                             className="text-gray-300 hover:text-red-400 transition-colors text-base leading-none"
                           >
                             ✕
                           </button>
                         </div>
                       </div>
-                      {/* Per-product tier selector */}
                       <div className="flex gap-1.5 mt-2 flex-wrap">
                         {TIERS.map((t) => (
                           <button
                             key={t.label}
                             type="button"
-                            onClick={() => setItemTier(product.slug, t.label)}
+                            onClick={() =>
+                              setSelected((prev) =>
+                                prev.map((s) =>
+                                  s.slug === product.slug && s.tier === itemTier ? { ...s, tier: t.label } : s
+                                )
+                              )
+                            }
                             className={`px-3 py-1 text-sm rounded-lg border font-medium transition-colors cursor-pointer ${
                               itemTier === t.label
                                 ? "bg-neutral-800 border-neutral-800 text-white"
