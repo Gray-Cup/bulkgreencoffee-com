@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
-  // Cloudflare provides geolocation via headers
-  const country = request.headers.get("cf-ipcountry") ||
-                  request.headers.get("x-vercel-ip-country") ||
-                  null;
+  try {
+    const country =
+      request.headers.get("cf-ipcountry") ||
+      request.headers.get("x-vercel-ip-country") ||
+      null;
 
-  return NextResponse.json({
-    country: country,
-  });
+    return NextResponse.json({ country });
+  } catch {
+    return NextResponse.json({ country: null });
+  }
 }
