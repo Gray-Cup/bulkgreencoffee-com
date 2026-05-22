@@ -41,17 +41,19 @@ export function ProductCard({ product, showPrice = true, showActions = true }: P
         {/* Absolute badges top-right */}
         <div className="absolute top-2 right-2 flex flex-col gap-1 items-end z-10">
           {/* Select Sample toggle button */}
-          <button
-            type="button"
-            onClick={() => toggle(product.slug)}
-            className={`px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
-              inCart
-                ? "bg-teal-600 text-white hover:bg-teal-700"
-                : "bg-white text-black hover:bg-teal-600 hover:text-white"
-            }`}
-          >
-            {inCart ? "✓ Selected" : "+ Select"}
-          </button>
+          {showActions && (
+            <button
+              type="button"
+              onClick={() => toggle(product.slug)}
+              className={`px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+                inCart
+                  ? "bg-teal-600 text-white hover:bg-teal-700"
+                  : "bg-white text-black hover:bg-teal-600 hover:text-white"
+              }`}
+            >
+              {inCart ? "✓ Selected" : "+ Select"}
+            </button>
+          )}
 
           {product.scaScore != null && product.scaScore > 81 && (
             <span className="bg-green-600 px-2 py-0.5 rounded text-xs font-medium text-white">
