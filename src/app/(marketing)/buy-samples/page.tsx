@@ -137,17 +137,17 @@ function BuySamplesInner() {
                       draggable={false}
                       className="object-contain p-4"
                     />
-                    {/* Select Sample — absolute top-right */}
+                    {/* Select — absolute top-right */}
                     <button
                       type="button"
                       onClick={() => toggle(product.slug)}
-                      className={`absolute top-2 right-2 z-10 px-2 py-0.5 rounded text-xs font-medium transition-colors cursor-pointer ${
+                      className={`absolute top-2 right-2 z-10 px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
                         isSelected
                           ? "bg-teal-600 text-white hover:bg-teal-700"
-                          : "bg-black/50 text-white hover:bg-black/70"
+                          : "bg-white text-black hover:bg-teal-600 hover:text-white"
                       }`}
                     >
-                      {isSelected ? "✓ Selected" : "+ Sample"}
+                      {isSelected ? "✓ Selected" : "+ Select"}
                     </button>
                   </div>
                   <div className="flex flex-col flex-1 p-4 gap-3">

@@ -43,13 +43,13 @@ export function ProductCard({ product, showPrice = true }: ProductCardProps) {
           <button
             type="button"
             onClick={() => toggle(product.slug)}
-            className={`px-2 py-0.5 rounded text-xs font-medium transition-colors cursor-pointer ${
+            className={`px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
               inCart
                 ? "bg-teal-600 text-white hover:bg-teal-700"
-                : "bg-black/50 text-white hover:bg-black/70"
+                : "bg-white text-black hover:bg-teal-600 hover:text-white"
             }`}
           >
-            {inCart ? "✓ Selected" : "+ Sample"}
+            {inCart ? "✓ Selected" : "+ Select"}
           </button>
 
           {product.scaScore != null && product.scaScore > 81 && (
