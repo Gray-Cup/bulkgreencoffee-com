@@ -143,7 +143,7 @@ function BuySamplesInner() {
                     <button
                       type="button"
                       onClick={() => toggle(product.slug)}
-                      className={`absolute top-2 right-2 z-10 px-3 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+                      className={`absolute top-2 right-2 z-10 px-3 py-1 rounded text-xs border border-neutral-400 font-semibold transition-colors cursor-pointer ${
                         isSelected
                           ? "bg-teal-600 text-white hover:bg-teal-700"
                           : "bg-white text-black hover:bg-teal-600 hover:text-white"
