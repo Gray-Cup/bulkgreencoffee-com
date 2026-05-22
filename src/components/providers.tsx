@@ -2,11 +2,16 @@
 
 import React from "react";
 import { CurrencyProvider } from "@/components/currency-provider";
+import { CartProvider } from "@/context/cart-context";
 
 interface RootProvidersProps {
   children: React.ReactNode;
 }
 
 export default function RootProviders({ children }: RootProvidersProps) {
-  return <CurrencyProvider>{children}</CurrencyProvider>;
+  return (
+    <CurrencyProvider>
+      <CartProvider>{children}</CartProvider>
+    </CurrencyProvider>
+  );
 }
