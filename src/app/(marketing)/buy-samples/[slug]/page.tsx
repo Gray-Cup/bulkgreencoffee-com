@@ -44,7 +44,7 @@ export default function BuySampleSlugPage() {
 
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-          {/* Left — product + tier picker */}
+          {/* Left — image + product info */}
           <div className="lg:sticky lg:top-28 lg:self-start space-y-5">
             <div className="aspect-square relative rounded-2xl overflow-hidden bg-gray-50 border border-gray-200">
               <Image
@@ -72,6 +72,20 @@ export default function BuySampleSlugPage() {
               <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
             </div>
 
+            {product.details && product.details.length > 0 && (
+              <ul className="space-y-1.5">
+                {product.details.map((d) => (
+                  <li key={d} className="flex items-start gap-2 text-sm text-gray-700">
+                    <span className="mt-0.5 text-teal-600 shrink-0">✓</span>
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Right — quantity, order summary, form */}
+          <div className="space-y-6">
             {/* Quantity tabs */}
             <div>
               <p className="text-xs text-muted-foreground mb-2">Quantity</p>
@@ -111,24 +125,7 @@ export default function BuySampleSlugPage() {
               </div>
             </div>
 
-            {product.details && product.details.length > 0 && (
-              <ul className="space-y-1.5">
-                {product.details.map((d) => (
-                  <li key={d} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="mt-0.5 text-teal-600 shrink-0">✓</span>
-                    {d}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-
-          {/* Right — form */}
-          <div>
-            <h2 className="text-xl font-semibold text-black mb-1">Your details</h2>
-            <p className="text-sm text-muted-foreground mb-6">
-              Fill in your details and we&apos;ll ship your order.
-            </p>
+            {/* Form */}
             <CheckoutForm
               products={[product.slug]}
               quantityTier={activeTier}
