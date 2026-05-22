@@ -154,7 +154,7 @@ function BuySamplesInner() {
                   </div>
                   <div className="flex flex-col flex-1 p-4 gap-3">
                     <div className="flex-1">
-                      <Link href={`/products/${product.slug}`} className="font-semibold text-sm text-black leading-tight hover:underline cursor-pointer">
+                      <Link href={`/buy-samples/${product.slug}`} className="font-semibold text-sm text-black leading-tight hover:underline cursor-pointer">
                         {product.name}
                       </Link>
                       {product.region && (
