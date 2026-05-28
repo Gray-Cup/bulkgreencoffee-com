@@ -12,10 +12,15 @@ export function OrganizationSchema() {
       width: 512,
       height: 512,
     },
+    description:
+      "Wholesale and export Indian specialty green coffee — Natural, Honey, and Washed lots from Koraput (Odisha) and Halflong (Assam). Serving roasters and importers worldwide.",
+    foundingDate: "2019",
+    areaServed: "Worldwide",
     sameAs: [
       "https://x.com/TheGrayCup",
       "https://github.com/Gray-Cup",
       "https://instagram.com/thegraycup",
+      "https://www.linkedin.com/company/gray-cup/",
       "https://www.indiamart.com/gray-cup-enterprises/",
     ],
     contactPoint: {

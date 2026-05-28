@@ -44,9 +44,12 @@ const fontPublicSans = Public_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bulkgreencoffee.com"),
-  title: "Bulk Green Coffee",
+  title: {
+    default: "Bulk Green Coffee | Indian Specialty Green Coffee for Export",
+    template: "%s | Bulk Green Coffee",
+  },
   description:
-    "India's B2B source for specialty green coffee — Naturals, HSD, and Washed from Koraput, Odisha and Halflong, Assam.",
+    "Wholesale Indian specialty green coffee for roasters and importers worldwide. Natural, Honey (HSD), and Washed process lots from Koraput (Odisha) and Halflong (Assam). Export-ready with full traceability.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -71,24 +74,26 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Bulk Green Coffee",
+    title: "Bulk Green Coffee | Indian Specialty Green Coffee for Export",
     description:
-      "India's B2B source for specialty green coffee — Naturals, HSD, and Washed from Koraput, Odisha and Halflong, Assam.",
+      "Wholesale Indian specialty green coffee for roasters and importers worldwide. Natural, Honey, and Washed lots from Koraput and Halflong. Export-ready with full traceability.",
     images: [
       {
         url: "https://bulkgreencoffee.com/og.png",
         width: 1200,
         height: 630,
-        alt: "Bulk Green Coffee — Wholesale specialty green coffee from India",
+        alt: "Bulk Green Coffee — Indian Specialty Green Coffee for Export",
       },
     ],
     type: "website",
+    locale: "en_US",
+    siteName: "Bulk Green Coffee",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bulk Green Coffee",
+    title: "Bulk Green Coffee | Indian Specialty Green Coffee for Export",
     description:
-      "India's B2B source for specialty green coffee — Naturals, HSD, and Washed from Koraput, Odisha and Halflong, Assam.",
+      "Wholesale Indian specialty green coffee for roasters and importers worldwide. Natural, Honey, and Washed lots from Koraput and Halflong. Export-ready.",
     images: ["https://bulkgreencoffee.com/og.png"],
   },
 };

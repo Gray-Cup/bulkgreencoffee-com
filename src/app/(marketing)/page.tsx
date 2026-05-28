@@ -3,8 +3,23 @@ import { getProductsByRegion } from "@/data/products";
 import { LazyProductRow } from "@/components/products";
 import { RequestCallDialog } from "@/components/RequestCallDialog";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Buy Indian Specialty Green Coffee | Wholesale & Export | Bulk Green Coffee",
+  description:
+    "Source specialty green coffee from India — Natural, Honey (HSD), and Washed process lots from Koraput (Odisha) and Halflong (Assam). Wholesale for roasters, export lots for importers. Fully traceable. MOQ from 60 kg.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Buy Indian Specialty Green Coffee | Wholesale & Export | Bulk Green Coffee",
+    description:
+      "Natural, Honey, and Washed green coffee from Koraput and Halflong. Wholesale for roasters, export lots for importers. Fully traceable Indian origin. MOQ from 60 kg.",
+    url: "https://bulkgreencoffee.com",
+    locale: "en_US",
+  },
+};
 
 const eastIndiaProducts = getProductsByRegion("East India");
 const northEastIndiaProducts = getProductsByRegion("North East India");
