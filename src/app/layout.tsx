@@ -45,11 +45,11 @@ const fontPublicSans = Public_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bulkgreencoffee.com"),
   title: {
-    default: "Bulk Green Coffee | Indian Specialty Green Coffee for Export",
+    default: "Bulk Green Coffee | Indian Specialty & Commercial Green Coffee",
     template: "%s | Bulk Green Coffee",
   },
   description:
-    "Wholesale Indian specialty green coffee for roasters and importers worldwide. Natural, Honey (HSD), and Washed process lots from Koraput (Odisha) and Halflong (Assam). Export-ready with full traceability.",
+    "Wholesale Indian green coffee for roasters, blenders, and importers. Specialty lots (Natural, Honey, Washed) and commercial AA/AAA grade from Koraput (Odisha) and Halflong (Assam). Peaberry available. Export-ready with full traceability.",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -74,15 +74,15 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Bulk Green Coffee | Indian Specialty Green Coffee for Export",
+    title: "Bulk Green Coffee | Indian Specialty & Commercial Green Coffee",
     description:
-      "Wholesale Indian specialty green coffee for roasters and importers worldwide. Natural, Honey, and Washed lots from Koraput and Halflong. Export-ready with full traceability.",
+      "Specialty and commercial-grade Indian green coffee for roasters, blenders, and importers. AA/AAA from ₹800/kg. Peaberry available. Koraput, Assam, and South India origins.",
     images: [
       {
         url: "https://bulkgreencoffee.com/og.png",
         width: 1200,
         height: 630,
-        alt: "Bulk Green Coffee — Indian Specialty Green Coffee for Export",
+        alt: "Bulk Green Coffee — Indian Specialty & Commercial Green Coffee",
       },
     ],
     type: "website",
@@ -91,9 +91,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bulk Green Coffee | Indian Specialty Green Coffee for Export",
+    title: "Bulk Green Coffee | Indian Specialty & Commercial Green Coffee",
     description:
-      "Wholesale Indian specialty green coffee for roasters and importers worldwide. Natural, Honey, and Washed lots from Koraput and Halflong. Export-ready.",
+      "Specialty and commercial-grade Indian green coffee. AA/AAA from ₹800/kg. Peaberry available. Koraput, Assam, and South India origins. Export-ready.",
     images: ["https://bulkgreencoffee.com/og.png"],
   },
 };

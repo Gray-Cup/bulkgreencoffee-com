@@ -9,7 +9,7 @@ export type Product = {
   details: string[];
   locations: string[];
   category: "Coffee";
-  categoryTwo?: "Single Origin" | "Blend" | "Premium";
+  categoryTwo?: "Single Origin" | "Blend" | "Premium" | "Commercial";
   priceRange: {
     min: number;
     max: number;

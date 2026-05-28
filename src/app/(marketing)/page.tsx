@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { getProductsByRegion } from "@/data/products";
+import { getProductsByRegion, getCommercialProducts } from "@/data/products";
 import { LazyProductRow } from "@/components/products";
 import { RequestCallDialog } from "@/components/RequestCallDialog";
 import Link from "next/link";
@@ -8,14 +8,14 @@ import type { Metadata } from "next";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Buy Indian Specialty Green Coffee | Wholesale & Export | Bulk Green Coffee",
+  title: "Buy Indian Green Coffee | Specialty & Commercial | Bulk Green Coffee",
   description:
-    "Source specialty green coffee from India — Natural, Honey (HSD), and Washed process lots from Koraput (Odisha) and Halflong (Assam). Wholesale for roasters, export lots for importers. Fully traceable. MOQ from 60 kg.",
+    "Source Indian green coffee — specialty lots (Natural, Honey, Washed) and commercial AA/AAA grade from Koraput (Odisha), Halflong (Assam), and South India. Wholesale for roasters, blenders, and importers. Peaberry available. MOQ from 30 kg.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Buy Indian Specialty Green Coffee | Wholesale & Export | Bulk Green Coffee",
+    title: "Buy Indian Green Coffee | Specialty & Commercial | Bulk Green Coffee",
     description:
-      "Natural, Honey, and Washed green coffee from Koraput and Halflong. Wholesale for roasters, export lots for importers. Fully traceable Indian origin. MOQ from 60 kg.",
+      "Specialty and commercial-grade Indian green coffee from Koraput, Halflong, and South India. AA/AAA from ₹800/kg. Peaberry available. Export-ready with full traceability.",
     url: "https://bulkgreencoffee.com",
     locale: "en_US",
   },
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 const eastIndiaProducts = getProductsByRegion("East India");
 const northEastIndiaProducts = getProductsByRegion("North East India");
 const southIndiaProducts = getProductsByRegion("South India");
+const commercialProducts = getCommercialProducts();
 
 export default function Home() {
   return (
@@ -34,11 +35,10 @@ export default function Home() {
             <div>
               <div>
                 <h1 className="text-4xl font-semibold text-black pt-2 max-w-xl">
-                  We help Roasters and Distributors source better Indian Coffee.
+                  Specialty and Commercial Indian Green Coffee — Wholesale & Export.
                 </h1>
                 <p className="text-lg text-neutral-700 mt-4 max-w-2xl">
-                  We are dedicated to providing exceptional service and support
-                  to our B2B clients. Whether you're a small roastery or a large importer, we are here to help you source the best Indian coffee for your needs.
+                  From AAA/AA commercial grade beans at ₹800/kg to award-worthy specialty lots — we source directly from Koraput, Assam, and South India. Whether you run a roastery, a café chain, or import at scale, we have the right grade for your volume.
                 </p>
                 <div className="pt-5 flex flex-row gap-4">
                   <RequestCallDialog />
@@ -61,6 +61,11 @@ export default function Home() {
               <div className="py-20 bg-white">
                 <div className="max-w-6xl mx-auto px-4 lg:px-6">
                   <LazyProductRow
+                    title="Commercial Grade"
+                    products={commercialProducts}
+                    showActions={false}
+                  />
+                  <LazyProductRow
                     title="East India"
                     products={eastIndiaProducts}
                     showActions={false}
@@ -79,8 +84,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* <Image src="/beans-circle.webp" alt="coffee beans" className="pl-2" width={200} height={200} /> */}
         </div>
       </div>
     </div>
