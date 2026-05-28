@@ -13,7 +13,7 @@ export default function TermsAndConditions() {
         <section>
           <h2 className="text-lg font-semibold text-black mb-3">1. About Us</h2>
           <p>
-            Bulk Green Coffee is a trading name of Graycup Enterprises, a green coffee procurement
+            Bulk Green Coffee is a trading name of Gray Cup Enterprises, a green coffee procurement
             and distribution business operating out of India. We source specialty and commercial-grade
             green coffee beans from farms across India and supply them to roasteries, cafes, importers,
             and other buyers worldwide.
@@ -107,14 +107,14 @@ export default function TermsAndConditions() {
           <h2 className="text-lg font-semibold text-black mb-3">7. Intellectual Property</h2>
           <p>
             All content on this website — including product descriptions, images, and copy — is the property of
-            Graycup Enterprises. You may not reproduce or redistribute any content without written permission.
+            Gray Cup Enterprises. You may not reproduce or redistribute any content without written permission.
           </p>
         </section>
 
         <section>
           <h2 className="text-lg font-semibold text-black mb-3">8. Limitation of Liability</h2>
           <p>
-            To the maximum extent permitted by law, Graycup Enterprises is not liable for any indirect, incidental,
+            To the maximum extent permitted by law, Gray Cup Enterprises is not liable for any indirect, incidental,
             or consequential loss arising from your use of our products or this website. Our total liability is
             limited to the amount paid for the specific order in dispute.
           </p>
